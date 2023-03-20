@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/DataStructureAlgorithm/DSA/obj
+/DataStructureAlgorithm/DSA/.vs/DSA
+/.gitignore
+/obj/Debug/net6.0
+/obj/Release/net6.0
+/obj
