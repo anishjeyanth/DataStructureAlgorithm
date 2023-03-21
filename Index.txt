@@ -1,0 +1,26 @@
+﻿static void Factorial()
+{
+    int n = 5; 
+    int result = 1;
+
+    for (int i = 1; i <= n; i++)
+    {
+        result *= i;
+    }
+
+    Console.WriteLine("{0}! = {1}", n, result);
+}
+
+static void Fibonacci()
+{
+    int n = 10;
+    int a = 0, b = 1, c;
+
+    for (int i = 2; i < n; i++)
+    {
+        c = a + b;
+        Console.Write(" {0}", c);
+        a = b;
+        b = c;
+    }
+}
