@@ -34,7 +34,21 @@ namespace DSA.Recursion
                 return n;
 
             Console.WriteLine("N-" + n);
-            int x =  Fibonacci(n - 1) + Fibonacci(n - 2);
+            int x = Fibonacci(n - 1) + Fibonacci(n - 2);
+            Console.WriteLine("-0-");
+            Console.WriteLine("NN-" + n);
+            Console.WriteLine("X-" + x);
+            Console.WriteLine("---");
+            return x;
+        }
+
+        public static int SumOfDigit(int n)
+        {
+            if (n == 0 || n < 0)
+                return 0;
+
+            Console.WriteLine("N-" + n);
+            int x = n % 10 + SumOfDigit(n / 10);
             Console.WriteLine("-0-");
             Console.WriteLine("NN-" + n);
             Console.WriteLine("X-" + x);

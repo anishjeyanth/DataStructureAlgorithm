@@ -1,3 +1,3 @@
 ﻿
-Console.WriteLine(DSA.Recursion.Recursion.Fibonacci(7));
+Console.WriteLine(DSA.Recursion.Recursion.SumOfDigit(573));
 
