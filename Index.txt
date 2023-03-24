@@ -27,7 +27,7 @@ static void Fibonacci()
 
 static void SumDigits()
 {
-    int number = 573;
+    int number = 739;
     int sum = 0;
     while (number > 0) {
         int digit = number % 10; // get the rightmost digit
@@ -35,5 +35,5 @@ static void SumDigits()
         number /= 10; // remove the rightmost digit from the number
     }
 
-    Console.WriteLine("The sum of digits is: " + sum);
+    Console.WriteLine("The sum of digits is: " + sum); // // (739 % 10 = 9) | (739 / 10 = 73) 
 }

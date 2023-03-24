@@ -27,6 +27,7 @@ namespace DSA.Recursion
 
         public static int Fibonacci(int n)
         {
+            Console.WriteLine("**********");
             if (n < 0)
                 return -1;
 
@@ -34,25 +35,35 @@ namespace DSA.Recursion
                 return n;
 
             Console.WriteLine("N-" + n);
-            int x = Fibonacci(n - 1) + Fibonacci(n - 2);
-            Console.WriteLine("-0-");
+            int a = Fibonacci(n - 1);
+            Console.WriteLine("A-" + a);
             Console.WriteLine("NN-" + n);
+            int b = Fibonacci(n - 2);
+            Console.WriteLine("B-" + b);
+            Console.WriteLine("NNN-" + n);
+            int x = a + b;
             Console.WriteLine("X-" + x);
-            Console.WriteLine("---");
+            Console.WriteLine("|||||||||||");
+            Console.WriteLine();
             return x;
         }
 
         public static int SumOfDigit(int n)
         {
+            Console.WriteLine("**********");
             if (n == 0 || n < 0)
                 return 0;
 
             Console.WriteLine("N-" + n);
-            int x = n % 10 + SumOfDigit(n / 10);
-            Console.WriteLine("-0-");
+            int a = SumOfDigit(n / 10); // (739 / 10 = 73) | (739 % 10 = 9)
+            Console.WriteLine("A-" + a);
             Console.WriteLine("NN-" + n);
+            int b = n % 10;
+            Console.WriteLine("B-" + b);
+            int x = b + a;
             Console.WriteLine("X-" + x);
-            Console.WriteLine("---");
+            
+            Console.WriteLine("|||||||||||");
             return x;
         }
 

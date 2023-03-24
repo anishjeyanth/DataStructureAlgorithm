@@ -1,3 +1,4 @@
 ﻿
-Console.WriteLine(DSA.Recursion.Recursion.SumOfDigit(573));
+Console.WriteLine(DSA.Recursion.Recursion.SumOfDigit(739));
+
 
