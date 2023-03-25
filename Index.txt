@@ -37,3 +37,42 @@ static void SumDigits()
 
     Console.WriteLine("The sum of digits is: " + sum); // // (739 % 10 = 9) | (739 / 10 = 73) 
 }
+
+public static int GetGCD(int num1, int num2)
+{
+
+    // Use Euclid's algorithm to find the GCD
+    int remainder = num1 % num2;
+    while (remainder != 0)
+    {
+        num1 = num2;
+        num2 = remainder;
+        remainder = num1 % num2;
+    }
+
+    return num2;
+}
+int gcd = GetGCD(12, 18); // returns 6
+
+public static string DecimalToBinary(int decimalNumber)
+{
+    if (decimalNumber == 0)
+    {
+        return "0";
+    }
+
+    string binaryString = string.Empty;
+    while (decimalNumber > 0)
+    {
+        int remainder = decimalNumber % 2;
+        binaryString = remainder + binaryString;
+        decimalNumber /= 2;
+    }
+
+    return binaryString;
+}
+string binaryNumber = DecimalToBinary(23); // returns "10111"
+
+
+
+

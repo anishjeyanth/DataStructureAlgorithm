@@ -25,25 +25,25 @@ namespace DSA.Recursion
             return x;
         }
 
-        public static int Fibonacci(int n)
+        public static int Fibonacci(int n, int type)
         {
-            Console.WriteLine("**********");
+            Console.WriteLine("|||||||||||");
             if (n < 0)
                 return -1;
 
             if (n == 0 || n == 1)
                 return n;
 
-            Console.WriteLine("N-" + n);
-            int a = Fibonacci(n - 1);
+            Console.WriteLine(type + "-N-" + n);
+            int a = Fibonacci(n - 1, 1);
             Console.WriteLine("A-" + a);
             Console.WriteLine("NN-" + n);
-            int b = Fibonacci(n - 2);
+            int b = Fibonacci(n - 2, 2);
             Console.WriteLine("B-" + b);
             Console.WriteLine("NNN-" + n);
             int x = a + b;
             Console.WriteLine("X-" + x);
-            Console.WriteLine("|||||||||||");
+            Console.WriteLine("**********");
             Console.WriteLine();
             return x;
         }
@@ -51,8 +51,7 @@ namespace DSA.Recursion
         public static int SumOfDigit(int n)
         {
             Console.WriteLine("**********");
-            if (n == 0 || n < 0)
-                return 0;
+            if (n == 0 || n < 0) return 0;
 
             Console.WriteLine("N-" + n);
             int a = SumOfDigit(n / 10); // (739 / 10 = 73) | (739 % 10 = 9)
@@ -67,5 +66,12 @@ namespace DSA.Recursion
             return x;
         }
 
+        public static int Power(int bas, int exp)
+        {
+            if(exp < 0) return -1;
+            if(exp == 0) return 1;
+
+            return bas * Power(bas, exp-1);
+        }        
     }
 }
