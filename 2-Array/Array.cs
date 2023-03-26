@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSA._2_Array
+namespace DSA.Array
 {
     internal class Array
     {
@@ -12,10 +12,10 @@ namespace DSA._2_Array
         {
             for (int i = 0; i < array.Length / 2; i++)
             {
-                int other = array.Length - i - 1;
+                int index = array.Length - i - 1;
                 int temp = array[i];
-                array[i] = array[other];
-                array[other] = temp;
+                array[i] = array[index];
+                array[index] = temp;
             }
 
             foreach (int i in array)
