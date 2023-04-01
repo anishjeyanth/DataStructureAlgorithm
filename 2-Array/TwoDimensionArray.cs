@@ -10,18 +10,25 @@ namespace DSA.Array
 {
     public class TwoDimensionArray
     {
-        string[,] twoDimension;
+        int[,] twoDimension;
         public TwoDimensionArray(int row, int column)
         {
-            twoDimension = new string[row,column];
+            twoDimension = new int[row,column];
 
             for(int r = 0;r < row; r++)
             {
                 for(int c = 0; c < column; c++)
                 {
-                    twoDimension[r, c] = string.Join(r.ToString(), c.ToString());
+                    twoDimension[r, c] = r * c;
                 }
             }
+
+            //int[,,] threeArray = new int[2, 3, 4]{
+            //    { { 1, 2, 3, 4}, {4, 5, 6, 7}, { 7, 8, 9, 10} },
+            //    { { 7, 8, 9, 10}, {10, 11, 12, 13}, { 13, 14, 15, 16} }
+            //};
+
+            //threeArray[0, 1, 2] = 4; 
         }
 
         public void Display()

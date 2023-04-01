@@ -14,6 +14,6 @@
 //singleDimensionArray.Display();
 //singleDimensionArray.Find(29);
 
-DSA.Array.TwoDimensionArray twoDimensionArray = new DSA.Array.TwoDimensionArray(3,5);
+DSA.Array.TwoDimensionArray twoDimensionArray = new DSA.Array.TwoDimensionArray(4,7);
 twoDimensionArray.Display();
 
