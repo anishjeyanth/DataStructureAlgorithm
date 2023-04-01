@@ -10,7 +10,7 @@ namespace DSA.Array
 {
     public class SingleDimensionArray
     {
-        int[] array = null;
+        int[] array;
         public SingleDimensionArray(int size) 
         {
             array = new int[size];
