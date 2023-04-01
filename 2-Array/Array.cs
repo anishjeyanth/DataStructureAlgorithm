@@ -23,5 +23,61 @@ namespace DSA.Array
                 Console.WriteLine(i);
             }
         }
+
+        public static void FindMissingNo(int[] array)
+        {
+            int arraySum = 0;
+            int totalSum = 0;
+            foreach (int i in array) 
+            {
+                arraySum += i;
+                //arraySum = arraySum + i;
+            }
+            totalSum = 15 * (15 + 1) / 2;
+            Console.WriteLine(totalSum - arraySum);
+        }
+
+        public static void TwoSum(int[] array, int target)
+        {
+            for(int i = 0; i < array.Length; i++)
+            {
+                for(int j=i+1; j < array.Length; j++)
+                {
+                    if (array[i] + array[j] == target)
+                        Console.WriteLine(i + "," + j);
+                }
+            }
+        }
+
+        public static void MaxProduct(int[] array)
+        {
+            int product = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] * array[j] > product)
+                    {
+                        product = array[i] * array[j];
+                        Console.WriteLine(i + "=" + array[i] + "|" + j + "=" + array[j] );
+                        Console.WriteLine(product);
+                    }                        
+                }
+            }
+        }
+
+        public static void Duplicate(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] == array[j])
+                    {                        
+                        Console.WriteLine(false);
+                    }
+                }
+            }
+        }
     }
 }
