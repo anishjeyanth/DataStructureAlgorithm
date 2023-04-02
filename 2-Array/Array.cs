@@ -79,5 +79,65 @@ namespace DSA.Array
                 }
             }
         }
+
+        public static bool Permutation(int[] array1, int[] array2)
+        {
+            if (array1.Length != array2.Length)
+                return false;
+
+            int sum1 = 0;
+            int sum2 = 0;
+            int mul1 = 1;
+            int mul2 = 1;
+            for (int i=0;i< array1.Length; i++)
+            {
+                sum1 += array1[i];
+                sum2 += array2[i];
+                mul1 *= array1[i];
+                mul2 *= array2[i];
+            }
+
+            if(sum1 == sum2 && mul1 == mul2)
+                return true;
+
+            return false;
+        }
+
+
+        public static void  RotateMatrix(int[,] matrix)
+        {
+            int N = matrix.GetLength(0);
+            for (int x = 0; x < N / 2; x++)
+            {
+                // Consider elements
+                // in group of 4 in
+                // current square
+                for (int y = x; y < N - x - 1; y++)
+                {
+                    // store current cell
+                    // in temp variable
+                    int temp = matrix[x, y];
+
+                    // right to top
+                    matrix[x, y] = matrix[y, N - 1 - x];
+
+                    // bottom to right
+                    matrix[y, N - 1 - x] = matrix[N - 1 - x, N - 1 - y];
+
+                    // left to bottom
+                    matrix[N - 1 - x, N - 1 - y]  = matrix[N - 1 - y, x];
+
+                    // assign temp to left
+                    matrix[N - 1 - y, x] = temp;
+                }
+            }
+
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                    Console.Write(" " + matrix[i, j]);
+                Console.WriteLine();
+            }
+        }
     }
 }

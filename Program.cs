@@ -1,4 +1,8 @@
-﻿DSA.Array.Array.Duplicate(new int[] { 8,3,6,5,0,9,2,7 });
+﻿DSA.Array.Array.RotateMatrix(new int[4,4] { { 1, 2, 3, 4 }, { 5, 6, 7,8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16} });
+
+//Console.WriteLine(DSA.Array.Array.Permutation(new int[] { 1,6, 2, 3, 9, 2}, new int[] { 2, 9, 2, 3, 6, 1 }));
+
+//DSA.Array.Array.Duplicate(new int[] { 8,3,6,5,0,9,2,7 });
 
 //DSA.Array.Array.MaxProduct(new int[] { 7, 5, 3, 4, 5, 1, 8, 0, 9 });
 
