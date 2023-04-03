@@ -1,4 +1,16 @@
-﻿DSA.Array.Array.RotateMatrix(new int[4,4] { { 1, 2, 3, 4 }, { 5, 6, 7,8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16} });
+﻿DSA.LinkedList.SingleLinkedList singleLinkedList = new DSA.LinkedList.SingleLinkedList();
+singleLinkedList.CreateLinkedList(100);
+singleLinkedList.InserNode(200);
+singleLinkedList.InserNode(300);
+singleLinkedList.InserNode(400);
+singleLinkedList.InserNode(500);
+singleLinkedList.InserNode(700);
+singleLinkedList.InserNode(450,2);
+singleLinkedList.Travesrse();
+
+
+
+//DSA.Array.Array.RotateMatrix(new int[4,4] { { 1, 2, 3, 4 }, { 5, 6, 7,8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16} });
 
 //Console.WriteLine(DSA.Array.Array.Permutation(new int[] { 1,6, 2, 3, 9, 2}, new int[] { 2, 9, 2, 3, 6, 1 }));
 
