@@ -38,6 +38,13 @@ namespace DSA.LinkedList
             {
                 node.Next = Head;
                 Head = node;
+
+                //Node currentNode = Head;
+                //while (currentNode.Next != null)
+                //{
+                //    currentNode = currentNode.Next;
+                //}
+                //currentNode.Next = node;
             }
             else if(location >= Size)
             {
@@ -62,14 +69,72 @@ namespace DSA.LinkedList
             Size++;
         }
 
+        public void DeleteNode(int location)
+        {
+            if (location == 1)
+            {
+                Head = Head.Next;
+                Size--;
+            }
+            else if (location >= Size)
+            {
+                Node tempNode = Head;
+                for (int i = 1; i < Size - 1; i++)
+                {
+                    tempNode = tempNode.Next;
+                }
+
+                tempNode.Next = null;
+                Tail = tempNode;
+                Size--;
+            }
+            else
+            {
+                int index = 1;
+                Node tempnode = Head;
+                while (tempnode.Next != null)
+                {
+                    if (location == index)
+                    {
+                        tempnode.Next = tempnode.Next.Next;
+                        Size--;
+                        break;
+                    }
+                    else
+                    {
+                        tempnode = tempnode.Next;
+                    }
+                    index++;
+                }
+            }
+        }
+
+        public int FindNode(int data)
+        {
+            int index = 1;
+            Node tempnode = Head;
+            while (tempnode.Next != null)
+            {
+                if (tempnode.Value == data)
+                {
+                    return index;
+                }
+
+                tempnode = tempnode.Next;
+                index++;
+            }
+
+            return 0;
+        }
+
         public void Travesrse()
         {
             if(Head != null)
             {
                 Node tempNode = Head;
                 int index = 0;  
-                //while(index < Size)
-                while(tempNode.Next != null)
+                while(index < Size && tempNode != null)
+                //while(tempNode.Next != null)
                 {
                     Console.Write(tempNode.Value);                    
                     if(index != Size)
@@ -81,7 +146,8 @@ namespace DSA.LinkedList
                     index++;
                 }
             }
-        }
+            Console.WriteLine();
+        } 
     }
 }
 

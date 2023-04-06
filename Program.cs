@@ -3,11 +3,19 @@ singleLinkedList.CreateLinkedList(100);
 singleLinkedList.InserNode(200);
 singleLinkedList.InserNode(300);
 singleLinkedList.InserNode(400);
+singleLinkedList.InserNode(800, 8);
 singleLinkedList.InserNode(500);
-singleLinkedList.InserNode(700);
+singleLinkedList.InserNode(600);
 singleLinkedList.InserNode(450,2);
+singleLinkedList.InserNode(900, 9);
 singleLinkedList.Travesrse();
-
+Console.WriteLine(singleLinkedList.FindNode(200));
+singleLinkedList.DeleteNode(2);
+singleLinkedList.Travesrse();
+singleLinkedList.DeleteNode(1);
+singleLinkedList.Travesrse();
+singleLinkedList.DeleteNode(10);
+singleLinkedList.Travesrse();
 
 
 //DSA.Array.Array.RotateMatrix(new int[4,4] { { 1, 2, 3, 4 }, { 5, 6, 7,8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16} });
