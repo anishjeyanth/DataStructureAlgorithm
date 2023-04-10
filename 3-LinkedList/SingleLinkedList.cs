@@ -21,7 +21,7 @@ namespace DSA.LinkedList
             Size = 1;
         }
 
-        public void Append(int data)
+        public void AppendNode(int data)
         {
             Node node = new Node(data);
 
@@ -39,7 +39,7 @@ namespace DSA.LinkedList
             Size++;
         }
 
-        public void Prepend(int data)
+        public void PrependNode(int data)
         {
             Node node = new Node(data);
             if (Size == 0)
@@ -88,7 +88,7 @@ namespace DSA.LinkedList
             }
         }
 
-        public Node Get(int index)
+        public Node GetNode(int index)
         {
             Node tempNode = Head;
             for(int i=0; i < index; i++)
@@ -99,16 +99,16 @@ namespace DSA.LinkedList
             return tempNode;
         }
 
-        public void Set(int index,int data)
+        public void SetNode(int index,int data)
         {
-            Node tempNode = Get(index);
+            Node tempNode = GetNode(index);
             if (tempNode != null)
             {
                 tempNode.Value = data;
             }
         }
 
-        public void List()
+        public void ListNode()
         {
             Node tempNode = Head;
             while(tempNode != null)
