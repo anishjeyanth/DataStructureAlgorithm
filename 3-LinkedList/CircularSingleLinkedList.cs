@@ -75,7 +75,7 @@ namespace DSA.LinkedList
             else if (location >= Size)
             {
                 Node tempNode = Head;
-                for(int i=0;i < Size -1; i++)
+                for(int i=0;i < Size - 2; i++)
                 {
                     tempNode = tempNode.Next;
                 }

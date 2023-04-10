@@ -3,7 +3,7 @@ circularSingleLinkedList.CreateLinkedList(100);
 circularSingleLinkedList.InsertNode(200);
 circularSingleLinkedList.InsertNode(300);
 circularSingleLinkedList.InsertNode(250, 1);
-circularSingleLinkedList.InsertNode(500,9);
+circularSingleLinkedList.InsertNode(500, 9);
 circularSingleLinkedList.InsertNode(400);
 circularSingleLinkedList.Traverse();
 circularSingleLinkedList.DeleteNode(0);
