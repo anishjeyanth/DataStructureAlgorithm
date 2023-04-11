@@ -71,7 +71,7 @@ namespace DSA.LinkedList
         {
             Node tempNode = Head;
             Node previousNode = Head;
-            while(tempNode != null)
+            while(tempNode.Next != null)
             {
                 previousNode = tempNode;
                 tempNode = tempNode.Next;
@@ -86,6 +86,30 @@ namespace DSA.LinkedList
                 Head = null;
                 Tail = null;
             }
+        }
+
+        public void InsertNode(int index, int data)
+        {
+            if (index == 0)
+                PrependNode(data);
+
+            if(index >= Size)
+                AppendNode(data);
+
+            Node node = new Node(data);
+            Node tempNode = GetNode(index - 1);
+            node.Next= tempNode.Next;
+            tempNode.Next = node;
+            Size++;
+        }
+
+        public void RemoveNode(int index)
+        {
+            Node previousNode = GetNode(index - 1);
+            Node tempNode = previousNode.Next;
+            previousNode.Next = tempNode.Next;
+            tempNode.Next = null;
+            Size--;
         }
 
         public Node GetNode(int index)
@@ -108,14 +132,32 @@ namespace DSA.LinkedList
             }
         }
 
+        public void Reverse()
+        {
+            Node temp = Head;
+            Head = Tail;
+            Tail = temp;
+            Node after = temp.Next;
+            Node before = null;
+
+            for(int i = 0; i < Size; i++)
+            {
+                after = temp.Next;
+                temp.Next = before;
+                before = temp;
+                temp = after;
+            }
+        }
+
         public void ListNode()
         {
             Node tempNode = Head;
             while(tempNode != null)
             {
-                Console.WriteLine(tempNode.Value);
+                Console.Write(tempNode.Value + "->");
                 tempNode = tempNode.Next;
             }
+            Console.WriteLine("");
         }
     }
 }
