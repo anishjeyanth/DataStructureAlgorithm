@@ -62,9 +62,6 @@ namespace DSA.LinkedList
             Head = Head.Next;
             tempNode.Next = null;
             Size--;
-
-            if (Size == 0)
-                Tail = null;
         }
 
         public void RemoveLast()
@@ -80,12 +77,6 @@ namespace DSA.LinkedList
             Tail = previousNode;
             Tail.Next = null;
             Size--;
-
-            if (Size == 0)
-            {
-                Head = null;
-                Tail = null;
-            }
         }
 
         public void InsertNode(int index, int data)
@@ -99,7 +90,7 @@ namespace DSA.LinkedList
                 return;
             }
 
-            if (index >= Size)
+            if (index == Size)
             {
                 AppendNode(data);
                 return;
@@ -114,7 +105,7 @@ namespace DSA.LinkedList
 
         public void RemoveNode(int index)
         {
-            if (index < 0 || index > Size)
+            if (index < 0 || index >= Size)
                 return;
 
             if (index == 0)
@@ -123,7 +114,7 @@ namespace DSA.LinkedList
                 return;
             }
 
-            if (index >= Size)
+            if (index == Size-1)
             {
                 RemoveLast();
                 return;
