@@ -1,4 +1,22 @@
-﻿//DSA.LinkedList.CircularSingleLinkedList circularSingleLinkedList = new DSA.LinkedList.CircularSingleLinkedList();
+﻿DSA.LinkedList.DoublyLinkedList doublyLinkedList = new DSA.LinkedList.DoublyLinkedList(100);
+doublyLinkedList.AppendNode(200);
+doublyLinkedList.AppendNode(400);
+doublyLinkedList.AppendNode(500);
+doublyLinkedList.InsertNode(2, 300);
+doublyLinkedList.AppendNode(550);
+doublyLinkedList.PrependNode(50);
+doublyLinkedList.ListNode();
+doublyLinkedList.RemoveFirst();
+doublyLinkedList.RemoveLast();
+doublyLinkedList.ListNode();
+doublyLinkedList.SetNode(2, 350);
+doublyLinkedList.ListNode();
+doublyLinkedList.RemoveNode(2);
+doublyLinkedList.ListNode();
+doublyLinkedList.Reverse();
+doublyLinkedList.ListNode();
+
+//DSA.LinkedList.CircularSingleLinkedList circularSingleLinkedList = new DSA.LinkedList.CircularSingleLinkedList();
 //circularSingleLinkedList.CreateLinkedList(100);
 //circularSingleLinkedList.InsertNode(200);
 //circularSingleLinkedList.InsertNode(300);
@@ -14,23 +32,23 @@
 //circularSingleLinkedList.Traverse();
 
 
-DSA.LinkedList.SingleLinkedList singleLinkedList = new DSA.LinkedList.SingleLinkedList(100);
-singleLinkedList.AppendNode(200);
-singleLinkedList.AppendNode(400);
-singleLinkedList.AppendNode(500);
-singleLinkedList.InsertNode(2,300);
-singleLinkedList.AppendNode(550);
-singleLinkedList.PrependNode(50);
-singleLinkedList.ListNode();
-singleLinkedList.RemoveFirst();
-singleLinkedList.RemoveLast();
-singleLinkedList.ListNode();
-singleLinkedList.SetNode(2, 350);
-singleLinkedList.ListNode();
-singleLinkedList.RemoveNode(2);
-singleLinkedList.ListNode();
-singleLinkedList.Reverse();
-singleLinkedList.ListNode();
+//DSA.LinkedList.SingleLinkedList singleLinkedList = new DSA.LinkedList.SingleLinkedList(100);
+//singleLinkedList.AppendNode(200);
+//singleLinkedList.AppendNode(400);
+//singleLinkedList.AppendNode(500);
+//singleLinkedList.InsertNode(2,300);
+//singleLinkedList.AppendNode(550);
+//singleLinkedList.PrependNode(50);
+//singleLinkedList.ListNode();
+//singleLinkedList.RemoveFirst();
+//singleLinkedList.RemoveLast();
+//singleLinkedList.ListNode();
+//singleLinkedList.SetNode(2, 350);
+//singleLinkedList.ListNode();
+//singleLinkedList.RemoveNode(2);
+//singleLinkedList.ListNode();
+//singleLinkedList.Reverse();
+//singleLinkedList.ListNode();
 
 
 //DSA.Array.Array.RotateMatrix(new int[4,4] { { 1, 2, 3, 4 }, { 5, 6, 7,8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16} });
