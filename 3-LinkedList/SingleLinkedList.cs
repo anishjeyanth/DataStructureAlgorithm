@@ -129,6 +129,9 @@ namespace DSA.LinkedList
 
         public Node GetNode(int index)
         {
+            if (index < 0 || index >= Size)
+                return null;
+
             Node tempNode = Head;
             for(int i=0; i < index; i++)
             {
