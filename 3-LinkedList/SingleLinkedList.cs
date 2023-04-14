@@ -58,6 +58,9 @@ namespace DSA.LinkedList
 
         public void RemoveFirst()
         {
+            if (Size == 0)
+                return;
+
             Node tempNode = Head;
             Head = Head.Next;
             tempNode.Next = null;
@@ -66,6 +69,9 @@ namespace DSA.LinkedList
 
         public void RemoveLast()
         {
+            if (Size == 0)
+                return;
+
             Node tempNode = Head;
             Node previousNode = Head;
             while(tempNode.Next != null)
