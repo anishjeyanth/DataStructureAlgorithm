@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,101 +12,174 @@ namespace DSA.LinkedList
     {
         public Node Head;
         public Node Tail;
-        int Size;
+        public int Size;
 
-        public Node CreateLinkedList(int data)
+        public CircularSingleLinkedList(int data)
         {
             Node node = new Node(data);
             Head = node;
             Tail = node;
+            Tail.Next = Head;
             Size = 1;
-
-            return Head;
         }
 
-        public void InsertNode(int data, int location = 0)
+        public void AppendNode(int data)
         {
             Node node = new Node(data);
-            if (Head == null)
+
+            if (Size == 0)
             {
-                CreateLinkedList(100);
-            }
-            else if(location == 0)
-            {
-                node.Next = Head;
                 Head = node;
-                Tail.Next = Head;
-            }
-            else if(location >= Size)
-            {
-                Tail.Next = node;
                 Tail = node;
                 Tail.Next = Head;
-            }   
+            }
             else
             {
-                Node tempNode = Head;
-                int index = 0;
-                while (index < location -1)
-                {
-                    tempNode = tempNode.Next;
-                    index++;
-                }
-
-                node.Next = tempNode.Next;
-                tempNode.Next = node;
+                node.Next = Head;
+                Tail.Next = node;                
+                Tail = node;
             }
 
             Size++;
         }
 
-        public void DeleteNode(int location)
+        public void PrependNode(int data)
         {
-            if(Size == 0)
+            Node node = new Node(data);
+            if (Size == 0)
             {
-                Head.Next = null;
-                Head = null;
-                Tail = null;                
-            }
-            else if(location == 0)
-            {
-                Head = Head.Next;
+                Head = node;
+                Tail = node;
                 Tail.Next = Head;
-            }
-            else if (location >= Size)
-            {
-                Node tempNode = Head;
-                for(int i=0;i < Size - 2; i++)
-                {
-                    tempNode = tempNode.Next;
-                }
-
-                tempNode.Next = Head;
-                Tail = tempNode;
             }
             else
             {
-                Node tempNode = Head;
-                for (int i = 0; i < location - 1; i++)
-                {
-                    tempNode = tempNode.Next;
-                }
-
-                tempNode.Next = tempNode.Next.Next;
+                node.Next = Head;
+                Tail.Next = node;
+                Head = node;                
             }
-
-            Size--;
+            Size++;
         }
 
 
-        public void Traverse()
+        public void RemoveFirst()
+        {
+            if (Size == 0)
+                return;
+
+            Node tempNode = Head;
+            Head = Head.Next;
+            Tail.Next = Head;
+            tempNode.Next = null;
+            Size--;
+        }
+
+        public void RemoveLast()
+        {
+            if (Size == 0)
+                return;
+
+            Node previousNode = GetNode(Size - 2);
+            previousNode.Next = Head;
+            Tail = previousNode;
+            Size--;
+        }
+
+        public void InsertNode(int index, int data)
+        {
+            if (index < 0 || index > Size)
+                return;
+
+            if (index == 0)
+            {
+                PrependNode(data);
+                return;
+            }
+
+            if (index == Size)
+            {
+                AppendNode(data);
+                return;
+            }
+
+            Node node = new Node(data);
+            Node tempNode = GetNode(index - 1);
+            node.Next = tempNode.Next;
+            tempNode.Next = node;
+            Size++;
+        }
+
+        public void RemoveNode(int index)
+        {
+            if (index < 0 || index >= Size)
+                return;
+
+            if (index == 0)
+            {
+                RemoveFirst();
+                return;
+            }
+
+            if (index == Size - 1)
+            {
+                RemoveLast();
+                return;
+            }
+
+            Node previousNode = GetNode(index - 1);
+            Node tempNode = previousNode.Next;
+            previousNode.Next = tempNode.Next;
+            tempNode.Next = null;
+            Size--;
+        }
+
+        public Node GetNode(int index)
+        {
+            if (index < 0 || index >= Size)
+                return null;
+
+            Node tempNode = Head;
+            for (int i = 0; i < index; i++)
+            {
+                tempNode = tempNode.Next;
+            }
+
+            return tempNode;
+        }
+
+        public void SetNode(int index, int data)
+        {
+            Node tempNode = GetNode(index);
+            if (tempNode != null)
+            {
+                tempNode.Value = data;
+            }
+        }
+
+        public void Reverse()
+        {
+            Node temp = Head;
+            Head = Tail;
+            Tail = temp;
+            Node after = null;
+            Node before = Head;
+
+            for (int i = 0; i < Size; i++)
+            {
+                after = temp.Next;
+                temp.Next = before;
+                before = temp;
+                temp = after;
+            }
+        }
+
+        public void ListNode()
         {
             Node tempNode = Head;
             do
             {
-                Console.Write(tempNode.Value);
+                Console.Write(tempNode.Value + "->");
                 tempNode = tempNode.Next;
-                Console.Write("->");
             } while (tempNode != Head);
 
             Console.WriteLine("");
