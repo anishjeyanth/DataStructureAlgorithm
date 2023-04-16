@@ -8,78 +8,60 @@ namespace DSA.StackQueue
 {
     public class StackLinkedList
     {
-        int[] Array;
-        int Top;
-        int MaxSize;
-        public StackLinkedList(int size)
+        Node Top;
+        int Size;
+        public StackLinkedList(int data)
         {
-            Array = new int[size];
-            Top = -1;
-            MaxSize = size;
-        }
-
-        public bool IsEmpty()
-        {
-            return Top <= -1;
-        }
-
-        public bool IsFull()
-        {
-            return Top == MaxSize - 1;
-        }
+            Node node = new Node(data);
+            Top = node;
+            Size = 1;
+        }        
 
         public void Push(int data)
         {
-            if (IsFull())
+            Node node = new Node(data);
+            if(Size == 0)
             {
-                Console.WriteLine("Stack is Full");
+                Top = node;
             }
             else
             {
-                Top++;
-                Array[Top] = data;
+                node.Next = Top;
+                Top = node;
             }
+
+            Size++;
         }
 
         public int Pop()
         {
-            if (IsEmpty())
-            {
+            if (Size == 0)
                 return -1;
-            }
-            else
-            {
-                int item = Array[Top];
-                Top--;
-                return item;
-            }
+
+            Node temp = Top;
+            Top = Top.Next;
+            temp.Next = null;
+            Size--;
+            return temp.Value;
         }
 
         public int Peek()
         {
-            if (IsEmpty())
-            {
-                return -1;
-            }
-            else
-            {
-                return Array[Top];
-            }
+            if (Top == null)
+                return 0;
+
+            return Top.Value;
         }
 
-        public void Print()
+        public void List()
         {
-            if (IsEmpty())
+            Node temp = Top;
+            while(temp != null)
             {
-                Console.WriteLine("Stack Empty");
+                Console.Write(temp.Value + "->");
+                temp = temp.Next;
             }
-            else
-            {
-                for (int i = Top; i >= 0; i--)
-                {
-                    Console.WriteLine(Array[i]);
-                }
-            }
+            Console.WriteLine("");
         }
     }
 }

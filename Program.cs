@@ -1,15 +1,25 @@
-﻿DSA.StackQueue.StackArray stackArray = new DSA.StackQueue.StackArray(10);
-stackArray.Print();
-stackArray.Push(100);
-stackArray.Push(200);
-stackArray.Push(300);
-stackArray.Push(400);
-Console.WriteLine(stackArray.Pop());
-stackArray.Push(500);
-stackArray.Push(600);
-Console.WriteLine(stackArray.Peek());
-stackArray.Push(700);
-stackArray.Print();
+﻿DSA.StackQueue.StackLinkedList stackLinkedList = new DSA.StackQueue.StackLinkedList(100);
+stackLinkedList.Push(200);
+stackLinkedList.Push(300);
+stackLinkedList.Push(400);
+Console.WriteLine(stackLinkedList.Pop());
+stackLinkedList.Push(500);
+Console.WriteLine(stackLinkedList.Peek());
+stackLinkedList.Push(600);
+stackLinkedList.List();
+
+//DSA.StackQueue.StackArray stackArray = new DSA.StackQueue.StackArray(10);
+//stackArray.Print();
+//stackArray.Push(100);
+//stackArray.Push(200);
+//stackArray.Push(300);
+//stackArray.Push(400);
+//Console.WriteLine(stackArray.Pop());
+//stackArray.Push(500);
+//stackArray.Push(600);
+//Console.WriteLine(stackArray.Peek());
+//stackArray.Push(700);
+//stackArray.Print();
 
 //DSA.LinkedList.DoublyLinkedList doublyLinkedList = new DSA.LinkedList.DoublyLinkedList(100);
 //doublyLinkedList.AppendNode(200);
