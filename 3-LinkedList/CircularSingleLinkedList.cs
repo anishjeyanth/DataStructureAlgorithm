@@ -36,7 +36,7 @@ namespace DSA.LinkedList
             else
             {
                 node.Next = Head;
-                Tail.Next = node;                
+                Tail.Next = node;
                 Tail = node;
             }
 
@@ -56,7 +56,7 @@ namespace DSA.LinkedList
             {
                 node.Next = Head;
                 Tail.Next = node;
-                Head = node;                
+                Head = node;
             }
             Size++;
         }
@@ -67,10 +67,8 @@ namespace DSA.LinkedList
             if (Size == 0)
                 return;
 
-            Node tempNode = Head;
             Head = Head.Next;
             Tail.Next = Head;
-            tempNode.Next = null;
             Size--;
         }
 
@@ -127,9 +125,7 @@ namespace DSA.LinkedList
             }
 
             Node previousNode = GetNode(index - 1);
-            Node tempNode = previousNode.Next;
-            previousNode.Next = tempNode.Next;
-            tempNode.Next = null;
+            previousNode.Next = previousNode.Next.Next;
             Size--;
         }
 
