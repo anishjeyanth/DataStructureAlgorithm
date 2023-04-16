@@ -1,4 +1,17 @@
-﻿//DSA.LinkedList.DoublyLinkedList doublyLinkedList = new DSA.LinkedList.DoublyLinkedList(100);
+﻿DSA.StackQueue.StackArray stackArray = new DSA.StackQueue.StackArray(10);
+stackArray.Print();
+stackArray.Push(100);
+stackArray.Push(200);
+stackArray.Push(300);
+stackArray.Push(400);
+Console.WriteLine(stackArray.Pop());
+stackArray.Push(500);
+stackArray.Push(600);
+Console.WriteLine(stackArray.Peek());
+stackArray.Push(700);
+stackArray.Print();
+
+//DSA.LinkedList.DoublyLinkedList doublyLinkedList = new DSA.LinkedList.DoublyLinkedList(100);
 //doublyLinkedList.AppendNode(200);
 //doublyLinkedList.AppendNode(400);
 //doublyLinkedList.AppendNode(500);
@@ -17,23 +30,23 @@
 //doublyLinkedList.ListNode();
 
 
-DSA.LinkedList.CircularSingleLinkedList circularSingleLinkedList = new DSA.LinkedList.CircularSingleLinkedList(100);
-circularSingleLinkedList.AppendNode(200);
-circularSingleLinkedList.AppendNode(400);
-circularSingleLinkedList.AppendNode(500);
-circularSingleLinkedList.InsertNode(2, 300);
-circularSingleLinkedList.AppendNode(550);
-circularSingleLinkedList.PrependNode(50);
-circularSingleLinkedList.ListNode();
-circularSingleLinkedList.RemoveFirst();
-circularSingleLinkedList.RemoveLast();
-circularSingleLinkedList.ListNode();
-circularSingleLinkedList.SetNode(2, 350);
-circularSingleLinkedList.ListNode();
-circularSingleLinkedList.RemoveNode(2);
-circularSingleLinkedList.ListNode();
-circularSingleLinkedList.Reverse();
-circularSingleLinkedList.ListNode();
+//DSA.LinkedList.CircularSingleLinkedList circularSingleLinkedList = new DSA.LinkedList.CircularSingleLinkedList(100);
+//circularSingleLinkedList.AppendNode(200);
+//circularSingleLinkedList.AppendNode(400);
+//circularSingleLinkedList.AppendNode(500);
+//circularSingleLinkedList.InsertNode(2, 300);
+//circularSingleLinkedList.AppendNode(550);
+//circularSingleLinkedList.PrependNode(50);
+//circularSingleLinkedList.ListNode();
+//circularSingleLinkedList.RemoveFirst();
+//circularSingleLinkedList.RemoveLast();
+//circularSingleLinkedList.ListNode();
+//circularSingleLinkedList.SetNode(2, 350);
+//circularSingleLinkedList.ListNode();
+//circularSingleLinkedList.RemoveNode(2);
+//circularSingleLinkedList.ListNode();
+//circularSingleLinkedList.Reverse();
+//circularSingleLinkedList.ListNode();
 
 
 //DSA.LinkedList.SingleLinkedList singleLinkedList = new DSA.LinkedList.SingleLinkedList(100);
