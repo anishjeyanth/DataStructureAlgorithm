@@ -202,6 +202,15 @@ namespace DSA.LinkedList
                 temp = temp.Next;
             } while (temp != Head);
 
+            Console.Write(" # ");
+
+            DNode temp1 = Tail;
+            do
+            {
+                Console.Write(temp1.Value + "<-");
+                temp1 = temp1.Prev;
+            } while (temp1 != Tail);
+
             Console.WriteLine();
         }
 
