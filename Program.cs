@@ -1,15 +1,15 @@
-﻿DSA.StackQueue.QueueLinkedList queueLinkedList = new DSA.StackQueue.QueueLinkedList(100);
-queueLinkedList.Enqueue(200);
-queueLinkedList.Enqueue(300);
-Console.WriteLine(queueLinkedList.LastNode());
-queueLinkedList.Enqueue(400);
-queueLinkedList.Dequeue();
-queueLinkedList.Enqueue(500);
-queueLinkedList.Enqueue(600);
-queueLinkedList.Dequeue();
-Console.WriteLine(queueLinkedList.FirstNode());
-queueLinkedList.Enqueue(700);
-queueLinkedList.List();
+﻿//DSA.StackQueue.QueueLinkedList queueLinkedList = new DSA.StackQueue.QueueLinkedList(100);
+//queueLinkedList.Enqueue(200);
+//queueLinkedList.Enqueue(300);
+//Console.WriteLine(queueLinkedList.LastNode());
+//queueLinkedList.Enqueue(400);
+//queueLinkedList.Dequeue();
+//queueLinkedList.Enqueue(500);
+//queueLinkedList.Enqueue(600);
+//queueLinkedList.Dequeue();
+//Console.WriteLine(queueLinkedList.FirstNode());
+//queueLinkedList.Enqueue(700);
+//queueLinkedList.List();
 
 
 //DSA.StackQueue.QueueArray queueArray = new DSA.StackQueue.QueueArray(5);
@@ -53,6 +53,24 @@ queueLinkedList.List();
 //Console.WriteLine(stackArray.Peek());
 //stackArray.Push(700);
 //stackArray.Print();
+
+DSA.LinkedList.CircularDoublyLinkedList circularDoublyLinkedList = new DSA.LinkedList.CircularDoublyLinkedList(100);
+circularDoublyLinkedList.AppendNode(200);
+circularDoublyLinkedList.AppendNode(400);
+circularDoublyLinkedList.AppendNode(500);
+circularDoublyLinkedList.InsertNode(2, 300);
+circularDoublyLinkedList.AppendNode(550);
+circularDoublyLinkedList.PrependNode(50);
+circularDoublyLinkedList.ListNode();
+circularDoublyLinkedList.RemoveFirst();
+circularDoublyLinkedList.RemoveLast();
+circularDoublyLinkedList.ListNode();
+circularDoublyLinkedList.SetNode(2, 350);
+circularDoublyLinkedList.ListNode();
+circularDoublyLinkedList.RemoveNode(2);
+circularDoublyLinkedList.ListNode();
+circularDoublyLinkedList.Reverse();
+circularDoublyLinkedList.ListNode();
 
 //DSA.LinkedList.DoublyLinkedList doublyLinkedList = new DSA.LinkedList.DoublyLinkedList(100);
 //doublyLinkedList.AppendNode(200);

@@ -17,7 +17,9 @@ namespace DSA.LinkedList
         {
             DNode node = new DNode(data);
             Head = node;
-            Tail = node;
+            Tail = node;            
+            Head.Prev = Tail;
+            Tail.Next = Head;
             Size = 1;
         }
 
@@ -27,12 +29,16 @@ namespace DSA.LinkedList
             if (Size == 0)
             {
                 Head = node;
-                Tail = node;
+                Tail = node;                
+                Head.Prev = Tail;
+                Tail.Next = Head;
             }
             else
             {
-                Tail.Next = node;
                 node.Prev = Tail;
+                node.Next = Head;
+                Tail.Next = node;
+                Head.Prev = node;
                 Tail = node;
             }
 
@@ -46,11 +52,15 @@ namespace DSA.LinkedList
             {
                 Head = node;
                 Tail = node;
+                Head.Prev = Tail;
+                Tail.Next = Head;
             }
             else
             {
                 node.Next = Head;
+                node.Prev = Tail;
                 Head.Prev = node;
+                Tail.Next = node;
                 Head = node;
             }
 
@@ -68,7 +78,9 @@ namespace DSA.LinkedList
             else
             {
                 Head = Head.Next;
-                Head.Prev = null;
+                Head.Prev = Tail;
+                Tail.Next = Head;
+                temp.Prev = null;
                 temp.Next = null;
             }
 
@@ -86,8 +98,10 @@ namespace DSA.LinkedList
             else
             {
                 Tail = Tail.Prev;
-                Tail.Next = null;
+                Tail.Next = Head;
+                Head.Prev = Tail;
                 temp.Prev = null;
+                temp.Next = null;
             }
 
             Size--;
@@ -186,21 +200,27 @@ namespace DSA.LinkedList
             {
                 Console.Write(temp.Value + "->");
                 temp = temp.Next;
-            } while (temp != null);
+            } while (temp != Head);
 
             Console.WriteLine();
         }
 
         public void Reverse()
         {
-            DNode temp = Tail;
-            do
-            {
-                Console.Write(temp.Value + "->");
-                temp = temp.Prev;
-            } while (temp != Head);
+            DNode temp = Head;
+            Head = Tail;
+            Tail = temp;
+            DNode after = null;
+            DNode before = Head;
 
-            Console.WriteLine();
+            for (int i = 0; i < Size; i++)
+            {
+                after = temp.Next;
+                temp.Next = before;
+                temp.Prev = after;
+                before = temp;
+                temp = after;
+            }
         }
     }
 }
