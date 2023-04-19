@@ -1,4 +1,25 @@
-﻿//DSA.StackQueue.QueueLinkedList queueLinkedList = new DSA.StackQueue.QueueLinkedList(100);
+﻿using System.Text.Json;
+
+DSA.Tree.BinarySearchTree binarySearchTree = new DSA.Tree.BinarySearchTree();
+binarySearchTree.Insert(47);
+binarySearchTree.Insert(21);
+binarySearchTree.Insert(76);
+binarySearchTree.Insert(18);
+binarySearchTree.Insert(27);
+binarySearchTree.Insert(52);
+binarySearchTree.Insert(82);
+binarySearchTree.Insert(33);
+binarySearchTree.Insert(100);
+binarySearchTree.Insert(77);
+binarySearchTree.Insert(66);
+binarySearchTree.PrintNode();
+Console.WriteLine(binarySearchTree.Contains(27));
+Console.WriteLine(binarySearchTree.Contains(100));
+Console.WriteLine(binarySearchTree.Contains(11));
+
+Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerializerOptions { WriteIndented = true }));
+
+//DSA.StackQueue.QueueLinkedList queueLinkedList = new DSA.StackQueue.QueueLinkedList(100);
 //queueLinkedList.Enqueue(200);
 //queueLinkedList.Enqueue(300);
 //Console.WriteLine(queueLinkedList.LastNode());
@@ -54,23 +75,23 @@
 //stackArray.Push(700);
 //stackArray.Print();
 
-DSA.LinkedList.CircularDoublyLinkedList circularDoublyLinkedList = new DSA.LinkedList.CircularDoublyLinkedList(100);
-circularDoublyLinkedList.AppendNode(200);
-circularDoublyLinkedList.AppendNode(400);
-circularDoublyLinkedList.AppendNode(500);
-circularDoublyLinkedList.InsertNode(2, 300);
-circularDoublyLinkedList.AppendNode(550);
-circularDoublyLinkedList.PrependNode(50);
-circularDoublyLinkedList.ListNode();
-circularDoublyLinkedList.RemoveFirst();
-circularDoublyLinkedList.RemoveLast();
-circularDoublyLinkedList.ListNode();
-circularDoublyLinkedList.SetNode(2, 350);
-circularDoublyLinkedList.ListNode();
-circularDoublyLinkedList.RemoveNode(2);
-circularDoublyLinkedList.ListNode();
-circularDoublyLinkedList.Reverse();
-circularDoublyLinkedList.ListNode();
+//DSA.LinkedList.CircularDoublyLinkedList circularDoublyLinkedList = new DSA.LinkedList.CircularDoublyLinkedList(100);
+//circularDoublyLinkedList.AppendNode(200);
+//circularDoublyLinkedList.AppendNode(400);
+//circularDoublyLinkedList.AppendNode(500);
+//circularDoublyLinkedList.InsertNode(2, 300);
+//circularDoublyLinkedList.AppendNode(550);
+//circularDoublyLinkedList.PrependNode(50);
+//circularDoublyLinkedList.ListNode();
+//circularDoublyLinkedList.RemoveFirst();
+//circularDoublyLinkedList.RemoveLast();
+//circularDoublyLinkedList.ListNode();
+//circularDoublyLinkedList.SetNode(2, 350);
+//circularDoublyLinkedList.ListNode();
+//circularDoublyLinkedList.RemoveNode(2);
+//circularDoublyLinkedList.ListNode();
+//circularDoublyLinkedList.Reverse();
+//circularDoublyLinkedList.ListNode();
 
 //DSA.LinkedList.DoublyLinkedList doublyLinkedList = new DSA.LinkedList.DoublyLinkedList(100);
 //doublyLinkedList.AppendNode(200);

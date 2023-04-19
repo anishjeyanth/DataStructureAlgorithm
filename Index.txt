@@ -1,4 +1,5 @@
-﻿
+﻿https://visualgo.net/
+
 https://eylearning.udemy.com/course/master-the-coding-interview-data-structures-algorithms/learn/lecture/12139582#overview
 https://eylearning.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344106#overview
 https://eylearning.udemy.com/course/data-structures-and-algorithms-java/learn/lecture/28748652#overview
@@ -101,4 +102,43 @@ O(n log n): This represents quasilinear time complexity, which means that the al
 O(n^2): This represents quadratic time complexity, which means that the algorithm's running time grows quadratically with the input size.
 
 O(2^n): This represents exponential time complexity, which means that the algorithm's running time grows exponentially with the input size.
+--
+Tree - Parent, Children, Leaf
+--
+There are several types of tree data structures, including:
+
+Binary Trees: A binary tree is a tree data structure where each node can have at most two children, commonly referred to as the left and right child.
+
+Binary Search Trees: A binary search tree is a binary tree where the value of each node's left child is less than the node's value, and the value of each node's right child is greater than the node's value.
+
+AVL Trees: An AVL tree is a binary search tree that is balanced, meaning that the heights of the left and right subtrees of each node differ by at most one.
+
+Red-Black Trees: A red-black tree is a self-balancing binary search tree where each node is either red or black, and the tree satisfies certain properties to ensure that the tree remains balanced.
+
+B-Trees: A B-tree is a self-balancing tree data structure that is commonly used for disk-based databases and file systems. It is designed to minimize the number of disk accesses required to locate a specific piece of data.
+
+Trie Trees: A trie, also called a prefix tree, is a tree data structure used to store a collection of strings, where each node represents a prefix or a complete string.
+
+Segment Trees: A segment tree is a tree data structure used to efficiently answer range queries on an array or a list.
+
+--
+There are several types of graph data structures, including:
+
+Directed Graphs (Digraphs): A directed graph is a graph where edges have a direction, meaning that they go from one vertex to another in a specific direction.
+
+Undirected Graphs: An undirected graph is a graph where edges do not have a direction, meaning that they connect two vertices without specifying a particular direction.
+
+Weighted Graphs: A weighted graph is a graph where each edge has a weight or cost associated with it.
+
+Complete Graphs: A complete graph is a graph where each vertex is connected to every other vertex in the graph.
+
+Sparse Graphs: A sparse graph is a graph where the number of edges is much smaller than the number of vertices.
+
+Dense Graphs: A dense graph is a graph where the number of edges is close to the maximum number of edges possible.
+
+Bipartite Graphs: A bipartite graph is a graph where the vertices can be divided into two groups such that all edges connect a vertex in one group to a vertex in the other group.
+
+Trees: A tree is a special type of graph where there are no cycles and every vertex has exactly one parent, except for the root, which has no parent.
+
+Directed Acyclic Graphs (DAGs): A directed acyclic graph is a directed graph with no cycles.
 --
