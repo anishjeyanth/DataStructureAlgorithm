@@ -72,6 +72,43 @@ namespace DSA.Tree
             return false;
         }
 
+        public void RInsert(int value)
+        {
+            if (Root == null)
+                Root = new BNode(value);
+
+            RecursiveInsert(Root, value);
+        }
+
+        private BNode RecursiveInsert(BNode currentNode, int value)
+        {
+            if(currentNode == null)
+                return new BNode(value);
+
+            if(value < currentNode.Value)
+                currentNode.Left = RecursiveInsert(currentNode.Left, value);
+            else if(value > currentNode.Value)
+                currentNode.Right = RecursiveInsert(currentNode.Right, value);
+
+            return currentNode;
+        }
+
+        public bool RContains(int value)
+        {
+            return RecursiveContains(Root, value);
+        }
+
+        private bool RecursiveContains(BNode currentNode, int value)
+        {
+            if(currentNode == null) return false;
+            if(currentNode.Value == value) return true;
+
+            if(value < currentNode.Value) 
+                return RecursiveContains(currentNode.Left, value);
+            else
+                return RecursiveContains(currentNode.Right, value);
+        }
+
         public void PrintNode()
         {
             if (Root == null)

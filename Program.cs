@@ -2,20 +2,20 @@
 using System.Text.Json.Serialization;
 
 DSA.Tree.BinarySearchTree binarySearchTree = new DSA.Tree.BinarySearchTree();
-binarySearchTree.Insert(100);
-binarySearchTree.Insert(50);
-binarySearchTree.Insert(150);
-binarySearchTree.Insert(39);
-binarySearchTree.Insert(69);
-binarySearchTree.Insert(139);
-binarySearchTree.Insert(169);
-binarySearchTree.Insert(128);
-binarySearchTree.Insert(117);
-binarySearchTree.Insert(17);
+binarySearchTree.RInsert(100);
+binarySearchTree.RInsert(50);
+binarySearchTree.RInsert(150);
+binarySearchTree.RInsert(39);
+binarySearchTree.RInsert(69);
+binarySearchTree.RInsert(139);
+binarySearchTree.RInsert(169);
+binarySearchTree.RInsert(128);
+binarySearchTree.RInsert(117);
+binarySearchTree.RInsert(17);
 binarySearchTree.PrintNode();
-Console.WriteLine(binarySearchTree.Contains(50));
-Console.WriteLine(binarySearchTree.Contains(139));
-Console.WriteLine(binarySearchTree.Contains(11));
+Console.WriteLine(binarySearchTree.RContains(50));
+Console.WriteLine(binarySearchTree.RContains(139));
+Console.WriteLine(binarySearchTree.RContains(11));
 
 Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerializerOptions { WriteIndented = true }));
 
