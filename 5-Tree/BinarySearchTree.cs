@@ -53,7 +53,7 @@ namespace DSA.Tree
                 return false;
 
             BNode temp = Root;
-            while (temp!=null)
+            while (temp != null)
             {
                 if(value < temp.Value)
                 {

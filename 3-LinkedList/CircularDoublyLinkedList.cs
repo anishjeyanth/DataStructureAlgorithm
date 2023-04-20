@@ -9,8 +9,8 @@ namespace DSA.LinkedList
 {
     public class CircularDoublyLinkedList
     {
-        DNode Head;
-        DNode Tail;
+        public DNode Head { get; set; }
+        public DNode Tail { get; set; }
         int Size;
 
         public CircularDoublyLinkedList(int data)

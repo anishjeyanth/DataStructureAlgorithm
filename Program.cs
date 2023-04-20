@@ -1,20 +1,20 @@
 ﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 DSA.Tree.BinarySearchTree binarySearchTree = new DSA.Tree.BinarySearchTree();
-binarySearchTree.Insert(47);
-binarySearchTree.Insert(21);
-binarySearchTree.Insert(76);
-binarySearchTree.Insert(18);
-binarySearchTree.Insert(27);
-binarySearchTree.Insert(52);
-binarySearchTree.Insert(82);
-binarySearchTree.Insert(33);
 binarySearchTree.Insert(100);
-binarySearchTree.Insert(77);
-binarySearchTree.Insert(66);
+binarySearchTree.Insert(50);
+binarySearchTree.Insert(150);
+binarySearchTree.Insert(39);
+binarySearchTree.Insert(69);
+binarySearchTree.Insert(139);
+binarySearchTree.Insert(169);
+binarySearchTree.Insert(128);
+binarySearchTree.Insert(117);
+binarySearchTree.Insert(17);
 binarySearchTree.PrintNode();
-Console.WriteLine(binarySearchTree.Contains(27));
-Console.WriteLine(binarySearchTree.Contains(100));
+Console.WriteLine(binarySearchTree.Contains(50));
+Console.WriteLine(binarySearchTree.Contains(139));
 Console.WriteLine(binarySearchTree.Contains(11));
 
 Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerializerOptions { WriteIndented = true }));
@@ -92,6 +92,9 @@ Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerial
 //circularDoublyLinkedList.ListNode();
 //circularDoublyLinkedList.Reverse();
 //circularDoublyLinkedList.ListNode();
+
+//Console.WriteLine(JsonSerializer.Serialize(circularDoublyLinkedList.Head, new JsonSerializerOptions { WriteIndented = true,ReferenceHandler = ReferenceHandler.IgnoreCycles  }));
+//Console.WriteLine(JsonSerializer.Serialize(circularDoublyLinkedList.Tail, new JsonSerializerOptions { WriteIndented = true, ReferenceHandler = ReferenceHandler.IgnoreCycles }));
 
 //DSA.LinkedList.DoublyLinkedList doublyLinkedList = new DSA.LinkedList.DoublyLinkedList(100);
 //doublyLinkedList.AppendNode(200);

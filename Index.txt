@@ -142,3 +142,7 @@ Trees: A tree is a special type of graph where there are no cycles and every ver
 
 Directed Acyclic Graphs (DAGs): A directed acyclic graph is a directed graph with no cycles.
 --
+BST - 
+every  node to the left of a parent node is always less than the parent
+every  node to the right of a parent node is always greater than the parent
+--

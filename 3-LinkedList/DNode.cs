@@ -8,10 +8,10 @@ namespace DSA.LinkedList
 {
     public class DNode
     {
-        public int Value;
+        public int Value { get; set; }
 
-        public DNode Prev;
-        public DNode Next;
+        public DNode Prev { get; set; }
+        public DNode Next { get; set; }
 
         public DNode() { }
 
