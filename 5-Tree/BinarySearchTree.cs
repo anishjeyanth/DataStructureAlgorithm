@@ -1,5 +1,6 @@
 ﻿using DSA.LinkedList;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,24 +14,24 @@ namespace DSA.Tree
 
         public bool Insert(int value)
         {
-            BNode node = new BNode(value);
+            BNode newNode = new BNode(value);
             if(Root == null)
             {
-                Root = node;
+                Root = newNode;
                 return true;
             }
 
             BNode temp = Root;
             while (true)
             {
-                if (node.Value == temp.Value)
+                if (newNode.Value == temp.Value)
                     return false;
 
-                if(node.Value < temp.Value)
+                if(newNode.Value < temp.Value)
                 {
                     if(temp.Left == null)
                     {
-                        temp.Left = node;
+                        temp.Left = newNode;
                         return true;
                     }
                     temp = temp.Left;
@@ -39,7 +40,7 @@ namespace DSA.Tree
                 {
                     if (temp.Right == null)
                     {
-                        temp.Right = node;
+                        temp.Right = newNode;
                         return true;
                     }
                     temp = temp.Right;
@@ -100,8 +101,11 @@ namespace DSA.Tree
 
         private bool RecursiveContains(BNode currentNode, int value)
         {
-            if(currentNode == null) return false;
-            if(currentNode.Value == value) return true;
+            if(currentNode == null) 
+                return false;
+
+            if(currentNode.Value == value) 
+                return true;
 
             if(value < currentNode.Value) 
                 return RecursiveContains(currentNode.Left, value);
@@ -109,50 +113,52 @@ namespace DSA.Tree
                 return RecursiveContains(currentNode.Right, value);
         }
 
-        public void PrintNode()
+        public void ListNode()
         {
             if (Root == null)
                 return;
 
-            PrintPreOrder(Root);
-            Console.WriteLine();
-            PrintInOrder(Root);
-            Console.WriteLine();
-            PrintPostOrder(Root);
-            Console.WriteLine();
+
+            //ListPreOrder(Root);
+            //Console.WriteLine();
+            //ListInOrder(Root);
+            //Console.WriteLine();
+            //ListPostOrder(Root);
+            //Console.WriteLine();
+            ListLevelOrder();
         }
 
-        private void PrintPreOrder(BNode node)
+        private void ListPreOrder(BNode node)
         {
             if (node == null)
                 return;
 
             Console.Write(node.Value + " - ");
-            PrintPreOrder(node.Left);
-            PrintPreOrder(node.Right);
+            ListPreOrder(node.Left);
+            ListPreOrder(node.Right);
         }
 
-        private void PrintInOrder(BNode node)
-        {
-            if (node == null)
-                return;
-            
-            PrintInOrder(node.Left);
-            Console.Write(node.Value + " - ");
-            PrintInOrder(node.Right);
-        }
-
-        private void PrintPostOrder(BNode node)
+        private void ListInOrder(BNode node)
         {
             if (node == null)
                 return;
 
-            PrintPostOrder(node.Left);
-            PrintPostOrder(node.Right);
+            ListInOrder(node.Left);
+            Console.Write(node.Value + " - ");           
+            ListInOrder(node.Right);
+        }
+
+        private void ListPostOrder(BNode node)
+        {
+            if (node == null)
+                return;
+
+            ListPostOrder(node.Left);
+            ListPostOrder(node.Right);
             Console.Write(node.Value + " - ");
         }
 
-        public void Print()
+        public void ListLevelOrder()
         {
             if (Root == null)
             {
@@ -160,22 +166,18 @@ namespace DSA.Tree
                 return;
             }
 
-            BNode current = Root;
-            Stack<BNode> stack = new Stack<BNode>();
-
-            while (current != null || stack.Count > 0)
+            Queue<BNode> queue = new Queue<BNode>();
+            queue.Enqueue(Root);
+            while(queue.Any())
             {
-                while (current != null)
-                {
-                    stack.Push(current);
-                    current = current.Left;
-                }
+                BNode queuenode = queue.Dequeue();
+                Console.Write(queuenode.Value + " - ");
+                if(queuenode.Left != null)
+                    queue.Enqueue(queuenode.Left);
 
-                current = stack.Pop();
-                Console.Write(current.Value + " ");
-
-                current = current.Right;
-            }
+                if (queuenode.Right != null)
+                    queue.Enqueue(queuenode.Right);
+            }            
         }
     }
 }

@@ -12,12 +12,12 @@ binarySearchTree.RInsert(169);
 binarySearchTree.RInsert(128);
 binarySearchTree.RInsert(117);
 binarySearchTree.RInsert(17);
-binarySearchTree.PrintNode();
-Console.WriteLine(binarySearchTree.RContains(50));
-Console.WriteLine(binarySearchTree.RContains(139));
-Console.WriteLine(binarySearchTree.RContains(11));
+binarySearchTree.ListNode();
+//Console.WriteLine(binarySearchTree.RContains(50));
+//Console.WriteLine(binarySearchTree.RContains(139));
+//Console.WriteLine(binarySearchTree.RContains(11));
 
-Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerializerOptions { WriteIndented = true }));
+//Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerializerOptions { WriteIndented = true }));
 
 //DSA.StackQueue.QueueLinkedList queueLinkedList = new DSA.StackQueue.QueueLinkedList(100);
 //queueLinkedList.Enqueue(200);
