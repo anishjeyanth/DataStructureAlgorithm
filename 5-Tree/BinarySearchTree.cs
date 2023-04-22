@@ -11,7 +11,6 @@ namespace DSA.Tree
     public class BinarySearchTree
     {
         public BNode Root;
-
         public bool Insert(int value)
         {
             BNode newNode = new BNode(value);
@@ -113,58 +112,54 @@ namespace DSA.Tree
                 return RecursiveContains(currentNode.Right, value);
         }
 
-        public void ListNode()
+        public void TraverseNode()
         {
             if (Root == null)
                 return;
 
-
-            //ListPreOrder(Root);
+            //PreOrderTraversal(Root);
             //Console.WriteLine();
-            //ListInOrder(Root);
+            //InOrderTraversal(Root);
             //Console.WriteLine();
-            //ListPostOrder(Root);
+            //PostOrderTraversal(Root);
             //Console.WriteLine();
-            ListLevelOrder();
+            LevelOrderTraversal();
         }
 
-        private void ListPreOrder(BNode node)
+        private void PreOrderTraversal(BNode node)
         {
             if (node == null)
                 return;
 
             Console.Write(node.Value + " - ");
-            ListPreOrder(node.Left);
-            ListPreOrder(node.Right);
+            PreOrderTraversal(node.Left);
+            PreOrderTraversal(node.Right);
         }
 
-        private void ListInOrder(BNode node)
+        private void InOrderTraversal(BNode node)
         {
             if (node == null)
                 return;
 
-            ListInOrder(node.Left);
+            InOrderTraversal(node.Left);
             Console.Write(node.Value + " - ");           
-            ListInOrder(node.Right);
+            InOrderTraversal(node.Right);
         }
 
-        private void ListPostOrder(BNode node)
+        private void PostOrderTraversal(BNode node)
         {
             if (node == null)
                 return;
 
-            ListPostOrder(node.Left);
-            ListPostOrder(node.Right);
+            PostOrderTraversal(node.Left);
+            PostOrderTraversal(node.Right);
             Console.Write(node.Value + " - ");
         }
 
-        public void ListLevelOrder()
+        public void LevelOrderTraversal()
         {
             if (Root == null)
-            {
-                Console.WriteLine("Tree is empty.");
                 return;
-            }
 
             Queue<BNode> queue = new Queue<BNode>();
             queue.Enqueue(Root);
@@ -175,7 +170,7 @@ namespace DSA.Tree
                 if(queuenode.Left != null)
                     queue.Enqueue(queuenode.Left);
 
-                if (queuenode.Right != null)
+                if(queuenode.Right != null)
                     queue.Enqueue(queuenode.Right);
             }            
         }
