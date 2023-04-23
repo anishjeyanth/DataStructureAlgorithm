@@ -11,13 +11,23 @@ binarySearchTree.RInsert(139);
 binarySearchTree.RInsert(169);
 binarySearchTree.RInsert(128);
 binarySearchTree.RInsert(117);
+binarySearchTree.RInsert(137);
 binarySearchTree.RInsert(17);
+
 binarySearchTree.TraverseNode();
 Console.WriteLine(binarySearchTree.RContains(50));
 Console.WriteLine(binarySearchTree.RContains(139));
 Console.WriteLine(binarySearchTree.RContains(11));
+Console.WriteLine(binarySearchTree.MinValue(binarySearchTree.Root));
+Console.WriteLine(binarySearchTree.MinValue(binarySearchTree.Root.Right));
 
-//Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerializerOptions { WriteIndented = true }));
+binarySearchTree.DeleteNode(binarySearchTree.Root, 169);
+binarySearchTree.DeleteNode(binarySearchTree.Root, 39);
+binarySearchTree.DeleteNode(binarySearchTree.Root, 128);
+binarySearchTree.DeleteNode(binarySearchTree.Root, 139);
+binarySearchTree.DeleteNode(binarySearchTree.Root, 112);
+
+Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerializerOptions { WriteIndented = true }));
 
 //DSA.StackQueue.QueueLinkedList queueLinkedList = new DSA.StackQueue.QueueLinkedList(100);
 //queueLinkedList.Enqueue(200);

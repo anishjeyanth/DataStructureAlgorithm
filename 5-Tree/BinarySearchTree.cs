@@ -174,5 +174,53 @@ namespace DSA.Tree
                     queue.Enqueue(queuenode.Right);
             }            
         }
+
+        public int MinValue(BNode currenNode)
+        {
+            while(currenNode.Left != null)
+            {
+                currenNode = currenNode.Left;
+            }
+
+            return currenNode.Value;
+        }
+
+        public BNode DeleteNode(BNode currenNode, int Value)
+        {
+            if (currenNode == null)
+                return null;
+
+            if(Value < currenNode.Value)
+            {
+                currenNode.Left = DeleteNode(currenNode.Left, Value);
+            }
+            else if (Value > currenNode.Value)
+            {
+                currenNode.Right = DeleteNode(currenNode.Right, Value);
+            }
+            else
+            {
+                if(currenNode.Left == null && currenNode.Right == null)
+                {
+                    currenNode = null;
+                }
+                else if(currenNode.Left == null)
+                {
+                    currenNode = currenNode.Right;
+                }
+                else if (currenNode.Right == null)
+                {
+                    currenNode = currenNode.Left;
+                }
+                else
+                {
+                    int minValue = MinValue(currenNode.Right);
+                    currenNode.Value = minValue;
+                    currenNode.Right = DeleteNode(currenNode.Right, minValue);
+                }
+            }
+
+            return currenNode;
+        }
     }
 }
