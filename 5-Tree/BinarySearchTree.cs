@@ -117,13 +117,12 @@ namespace DSA.Tree
             if (Root == null)
                 return;
 
-            //PreOrderTraversal(Root);
-            //Console.WriteLine();
-            //InOrderTraversal(Root);
-            //Console.WriteLine();
-            //PostOrderTraversal(Root);
-            //Console.WriteLine();
-            LevelOrderTraversal();
+            PreOrderTraversal(Root);
+            Console.WriteLine();
+            InOrderTraversal(Root);
+            Console.WriteLine();
+            PostOrderTraversal(Root);
+            Console.WriteLine();
         }
 
         private void PreOrderTraversal(BNode node)
@@ -156,26 +155,7 @@ namespace DSA.Tree
             Console.Write(node.Value + " - ");
         }
 
-        public void LevelOrderTraversal()
-        {
-            if (Root == null)
-                return;
-
-            Queue<BNode> queue = new Queue<BNode>();
-            queue.Enqueue(Root);
-            while(queue.Any())
-            {
-                BNode queuenode = queue.Dequeue();
-                Console.Write(queuenode.Value + " - ");
-                if(queuenode.Left != null)
-                    queue.Enqueue(queuenode.Left);
-
-                if(queuenode.Right != null)
-                    queue.Enqueue(queuenode.Right);
-            }            
-        }
-
-        public int MinValue(BNode currenNode)
+        public int MinNode(BNode currenNode)
         {
             while(currenNode.Left != null)
             {
@@ -214,13 +194,64 @@ namespace DSA.Tree
                 }
                 else
                 {
-                    int minValue = MinValue(currenNode.Right);
+                    int minValue = MinNode(currenNode.Right);
                     currenNode.Value = minValue;
                     currenNode.Right = DeleteNode(currenNode.Right, minValue);
                 }
             }
 
             return currenNode;
+        }
+
+        public void BreadthFirstSearch()
+        {
+            List<int> result = new List<int>();
+            Queue<BNode> queueNode = new Queue<BNode>();
+            queueNode.Enqueue(Root);
+            while (queueNode.Any())
+            {
+                BNode currentNode = queueNode.Dequeue();
+                result.Add(currentNode.Value);
+                if (currentNode.Left != null)
+                {
+                    queueNode.Enqueue(currentNode.Left);
+                }
+
+                if (currentNode.Right != null)
+                {
+                    queueNode.Enqueue(currentNode.Right);
+                }
+            }
+
+            result.ForEach(x =>
+            {
+                Console.Write(x + " - ");
+            });
+        }
+
+        public void DepthFirstSearch()
+        {
+            List<int> list =  new List<int>();
+            Traverse(Root, list);
+            list.ForEach(x =>
+            {
+                Console.Write(x + " - ");
+            });
+        }
+
+        private void Traverse(BNode node, List<int> list)
+        {
+            if(node.Left!= null)
+            {
+                Traverse(node.Left, list);
+            } 
+
+            if(node.Right!= null)
+            {
+                Traverse(node.Right, list);
+            }
+
+            list.Add(node.Value);
         }
     }
 }
