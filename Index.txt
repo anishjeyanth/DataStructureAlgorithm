@@ -157,10 +157,10 @@ Trees: A tree is a special type of graph where there are no cycles and every ver
 
 Directed Acyclic Graphs (DAGs): A directed acyclic graph is a directed graph with no cycles.
 --
-Tree is a hierarchical data structure that consists of nodes connected by edges. Each node in a tree can have zero or more children, 
+Tree - is a hierarchical data structure that consists of nodes connected by edges. Each node in a tree can have zero or more children, 
 except for the root node which has no parent. 
-Binary tree is a tree data structure in which each node has at most two children, referred to as the left child and the right child.
-Binary search tree (BST) is a type of tree where each node has at most two children, 
+Binary tree - is a tree data structure in which each node has at most two children, referred to as the left child and the right child.
+Binary search tree - (BST) is a type of tree where each node has at most two children, 
 and the values of nodes in the left subtree are less than the value of the parent node, while the values of nodes in the right subtree 
 are greater than the value of the parent node.
 --
@@ -172,3 +172,21 @@ There must be no duplicate nodes.
 Depth First Search - PreOrder, InOrder, PostOrder
 Breadth First Search - LevelOrder
 --
+Binary tree can be divided into following types:
+Complete Binary Tree
+Perfect Binary Tree
+Balanced Binary Tree
+--
+	B
+A		 C
+
+InOrder - ABC
+PreOrder - BAC
+PostOrder - ACB
+--
+Binary Heap - MinHeap, MaxHeap
+the key at root must be minimum among all key present in the binary heap.
+
+Heapify
+
+

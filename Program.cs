@@ -1,23 +1,22 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-DSA.Tree.BinarySearchTree binarySearchTree = new DSA.Tree.BinarySearchTree();
-binarySearchTree.RInsert(100);
-binarySearchTree.RInsert(50);
-binarySearchTree.RInsert(150);
-binarySearchTree.RInsert(39);
-binarySearchTree.RInsert(69);
-binarySearchTree.RInsert(139);
-binarySearchTree.RInsert(169);
-binarySearchTree.RInsert(128);
-binarySearchTree.RInsert(117);
-binarySearchTree.RInsert(137);
-binarySearchTree.RInsert(17);
+//DSA.Tree.BinarySearchTree binarySearchTree = new DSA.Tree.BinarySearchTree();
+//binarySearchTree.RInsert(100);
+//binarySearchTree.RInsert(50);
+//binarySearchTree.RInsert(150);
+//binarySearchTree.RInsert(39);
+//binarySearchTree.RInsert(69);
+//binarySearchTree.RInsert(139);
+//binarySearchTree.RInsert(169);
+//binarySearchTree.RInsert(128);
+//binarySearchTree.RInsert(117);
+//binarySearchTree.RInsert(137);
+//binarySearchTree.RInsert(17);
 
 //binarySearchTree.TraverseNode();
 //binarySearchTree.BreadthFirstSearch();
-binarySearchTree.DepthFirstSearch();
-
+//binarySearchTree.DepthFirstSearch();
 
 //Console.WriteLine(binarySearchTree.RContains(50));
 //Console.WriteLine(binarySearchTree.RContains(139));
@@ -26,7 +25,7 @@ binarySearchTree.DepthFirstSearch();
 //Console.WriteLine(binarySearchTree.MinNode(binarySearchTree.Root.Left));
 //Console.WriteLine(binarySearchTree.MinNode(binarySearchTree.Root.Right));
 
-Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerializerOptions { WriteIndented = true }));
+//Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Root, new JsonSerializerOptions { WriteIndented = true }));
 
 //binarySearchTree.DeleteNode(binarySearchTree.Root, 169);
 //binarySearchTree.DeleteNode(binarySearchTree.Root, 39);
