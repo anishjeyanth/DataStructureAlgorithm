@@ -1,6 +1,22 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
+DSA.BinaryHeap.BinaryHeap binaryHeap = new DSA.BinaryHeap.BinaryHeap(15);
+binaryHeap.Push(7);
+binaryHeap.Push(9);
+binaryHeap.Push(1);
+binaryHeap.Push(8);
+binaryHeap.Push(2);
+binaryHeap.Push(6);
+binaryHeap.Push(4);
+binaryHeap.Push(5);
+binaryHeap.Push(3);
+binaryHeap.Traverse();
+Console.WriteLine(binaryHeap.Pop());
+binaryHeap.Traverse();
+
+
+
 //DSA.Tree.BinarySearchTree binarySearchTree = new DSA.Tree.BinarySearchTree();
 //binarySearchTree.RInsert(100);
 //binarySearchTree.RInsert(50);
