@@ -32,13 +32,13 @@ namespace DSA.BinaryHeap
             {
                 int value = Array[1];
                 Array[1] = Array[SizeOfTree];
-                HeapifyMaxTopToBottom(1);
+                MinHeapifyTopToBottom(1);
                 return value;
             }
 
         }
 
-        private void HeapifyMaxTopToBottom(int index)
+        private void MaxHeapifyTopToBottom(int index)
         {
             int left = index * 2;
             int right = index * 2 + 1;
@@ -71,10 +71,10 @@ namespace DSA.BinaryHeap
                 }
             }
 
-            HeapifyMaxTopToBottom(swap);
+            MaxHeapifyTopToBottom(swap);
         }
 
-        private void HeapifyMinTopToBottom(int index)
+        private void MinHeapifyTopToBottom(int index)
         {
             int left = index * 2;
             int right = index * 2 + 1;
@@ -107,7 +107,7 @@ namespace DSA.BinaryHeap
                 }
             }
 
-            HeapifyMinTopToBottom(swap);
+            MinHeapifyTopToBottom(swap);
         }
 
         private void MinHeapify(int index)
@@ -148,6 +148,8 @@ namespace DSA.BinaryHeap
             {
                 Console.Write(Array[i]+ " - ");
             }
+
+            Console.WriteLine();
         }
     }
 }
