@@ -21,7 +21,7 @@ namespace DSA.BinaryHeap
         {
             Array[SizeOfTree+1] = data;
             SizeOfTree++;
-            MinHeapify(SizeOfTree);
+            MaxHeapify(SizeOfTree);
         }
 
         public int Pop()
@@ -32,46 +32,25 @@ namespace DSA.BinaryHeap
             {
                 int value = Array[1];
                 Array[1] = Array[SizeOfTree];
-                MinHeapifyTopToBottom(1);
+                MaxHeapifyTopToBottom(1);
                 return value;
             }
-
         }
 
-        private void MaxHeapifyTopToBottom(int index)
+        private void MinHeapify(int index)
         {
-            int left = index * 2;
-            int right = index * 2 + 1;
-            int swap = 0;
-            if (SizeOfTree < left)
+            int parent = index / 2;
+            if (index <= 1)
                 return;
 
-            if(SizeOfTree == left)
+            if (Array[index] < Array[parent])
             {
-                if (Array[index] < Array[left])
-                {
-                    int tmp = Array[index];
-                    Array[index] = Array[left];
-                    Array[left] = tmp;
-                }
-                return;
-            }
-            else
-            {
-                if (Array[left] > Array[right]) 
-                    swap = left;
-                else
-                    swap = right;
-
-                if (Array[index] < Array[swap])
-                {
-                    int tmp = Array[index];
-                    Array[index] = Array[swap];
-                    Array[swap] = tmp;
-                }
+                int temp = Array[index];
+                Array[index] = Array[parent];
+                Array[parent] = temp;
             }
 
-            MaxHeapifyTopToBottom(swap);
+            MinHeapify(parent);
         }
 
         private void MinHeapifyTopToBottom(int index)
@@ -110,22 +89,6 @@ namespace DSA.BinaryHeap
             MinHeapifyTopToBottom(swap);
         }
 
-        private void MinHeapify(int index)
-        {
-            int parent = index / 2;
-            if (index <= 1)
-                return;
-
-            if (Array[index] < Array[parent])
-            {
-                int temp = Array[index];
-                Array[index] = Array[parent];
-                Array[parent] = temp;
-            }
-
-            MinHeapify(parent);
-        }
-
         private void MaxHeapify(int index)
         {
             int parent = index / 2;
@@ -140,6 +103,42 @@ namespace DSA.BinaryHeap
             }
 
             MaxHeapify(parent);
+        }
+
+        private void MaxHeapifyTopToBottom(int index)
+        {
+            int left = index * 2;
+            int right = index * 2 + 1;
+            int swap = 0;
+            if (SizeOfTree < left)
+                return;
+
+            if(SizeOfTree == left)
+            {
+                if (Array[index] < Array[left])
+                {
+                    int tmp = Array[index];
+                    Array[index] = Array[left];
+                    Array[left] = tmp;
+                }
+                return;
+            }
+            else
+            {
+                if (Array[left] > Array[right]) 
+                    swap = left;
+                else
+                    swap = right;
+
+                if (Array[index] < Array[swap])
+                {
+                    int tmp = Array[index];
+                    Array[index] = Array[swap];
+                    Array[swap] = tmp;
+                }
+            }
+
+            MaxHeapifyTopToBottom(swap);
         }
 
         public void Traverse()
