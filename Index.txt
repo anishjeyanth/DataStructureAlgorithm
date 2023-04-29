@@ -188,5 +188,18 @@ Binary Heap - MinHeap, MaxHeap
 the key at root must be minimum among all key present in the binary heap.
 
 Heapify
+--
+Binary Tree
+BINARY TREE is unordered hence faster in process of insertion, deletion, and searching.
+In BINARY TREE there is no ordering in terms of how the nodes are arranged
+Data Representation is carried out in a hierarchical format.
+Binary trees allow duplicate values.	
+The speed of deletion, insertion, and searching operations in Binary Tree is slower as compared to Binary Search Tree because it is unordered. 
 
+Binary Search Tree
+Maintaining the order property in a binary search tree can make insertion and deletion slower compared to a regular binary tree. 
+In BINARY SEARCH TREE the left subtree has elements less than the nodes element and the right subtree has elements greater than the nodes element.
+Data Representation is carried out in the ordered format.
+Binary Search Tree does not allow duplicate values.
+Because the Binary Search Tree has ordered properties, it conducts element deletion, insertion, and searching faster.
 

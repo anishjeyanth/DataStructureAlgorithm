@@ -7,14 +7,13 @@ binaryHeap.Push(20);
 binaryHeap.Push(80);
 binaryHeap.Push(10);
 binaryHeap.Push(15);
-binaryHeap.Push(70);
 binaryHeap.Push(95);
-//binaryHeap.Push(5);
-//binaryHeap.Push(3);
+binaryHeap.Push(70);
+binaryHeap.Push(98);
+binaryHeap.Push(88);
 binaryHeap.Traverse();
-Console.WriteLine(binaryHeap.Pop());
+//Console.WriteLine(binaryHeap.Pop());
 binaryHeap.Traverse();
-
 
 
 //DSA.Tree.BinarySearchTree binarySearchTree = new DSA.Tree.BinarySearchTree();
