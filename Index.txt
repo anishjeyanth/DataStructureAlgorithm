@@ -203,3 +203,25 @@ Data Representation is carried out in the ordered format.
 Binary Search Tree does not allow duplicate values.
 Because the Binary Search Tree has ordered properties, it conducts element deletion, insertion, and searching faster.
 
+--
+collision techniques:
+Open Hashing: It is also known as closed addressing.
+Closed Hashing: It is also known as open addressing.
+
+Open Hashing
+In Open Hashing, one of the methods used to resolve the collision is known as a chaining method.
+
+Closed hashing, three techniques are used to resolve the collision:
+Linear probing
+Linear probing is one of the forms of open addressing. As we know that each cell in the hash table contains a key-value pair, so when the collision occurs by mapping a new key to the cell already occupied by another key, then linear probing technique searches for the closest free locations and adds a new key to that empty cell. In this case, searching is performed sequentially, starting from the position where the collision occurs till the empty cell is not found.
+
+Quadratic probing
+In case of linear probing, searching is performed linearly. In contrast, quadratic probing is an open addressing technique that uses quadratic polynomial for searching until a empty slot is found.
+
+Double Hashing technique
+Double hashing is an open addressing technique which is used to avoid the collisions. When the collision occurs then this technique uses the secondary hash of the key. It uses one hash value as an index to move forward until the empty location is found.
+--
+
+
+
+
