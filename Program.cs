@@ -2,17 +2,23 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-DSA.Trie.Trie trie = new DSA.Trie.Trie();
-trie.Add("anish");
-trie.Add("anitha");
-trie.Add("effie");
-trie.Add("america");
-Console.WriteLine(trie.Search("ani"));
-Console.WriteLine(trie.Search("anit"));
-Console.WriteLine(trie.Search("anitha"));
-Console.WriteLine(trie.Search("amita"));
-Console.WriteLine(trie.Search("america"));
-Console.WriteLine(trie.Search("anidh"));
+DSA.Search.BinarySearch binarySearch = new DSA.Search.BinarySearch();
+Console.WriteLine(binarySearch.SearchArray(new int[] { 2,4,8,15,26,37,48,50,60,62,65 }, 7));
+Console.WriteLine(binarySearch.SearchArray(new int[] { 2, 4, 8, 15, 26, 37, 48, 50, 60, 62, 65 }, 60));
+Console.WriteLine(binarySearch.SearchString("Fear leads to anger; anger leads to hatred; hatred leads to conflict; conflict leads to suffering", "hat"));
+Console.WriteLine(binarySearch.SearchString("Fear leads to anger; anger leads to hatred; hatred leads to conflict; conflict leads to suffering", "cona"));
+
+//DSA.Trie.Trie trie = new DSA.Trie.Trie();
+//trie.Add("anish");
+//trie.Add("anitha");
+//trie.Add("effie");
+//trie.Add("america");
+//Console.WriteLine(trie.Search("ani"));
+//Console.WriteLine(trie.Search("anit"));
+//Console.WriteLine(trie.Search("anitha"));
+//Console.WriteLine(trie.Search("amita"));
+//Console.WriteLine(trie.Search("america"));
+//Console.WriteLine(trie.Search("anidh"));
 
 
 //DSA.HashTable.DoubleHash doubleHash = new DSA.HashTable.DoubleHash(20);
