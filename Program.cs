@@ -1,7 +1,19 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-DSA.HashTable.LinearHash linearHash = new DSA.HashTable.LinearHash();
+DSA.HashTable.LinearHash linearHash = new DSA.HashTable.LinearHash(20);
+linearHash.Set("aa", 20);
+linearHash.Set("bb", 85);
+linearHash.Set("cc", 23);
+linearHash.Set("dd", 45);
+linearHash.Set("ee", 98);
+linearHash.Set("ff", 10);
+linearHash.Set("gg", 28);
+linearHash.Set("hh", 64);
+linearHash.Set("ii", 09);
+linearHash.Set("jj", 45);
+linearHash.Set("kk", 76);
+linearHash.List();
 
 //DSA.HashTable.ChainingHash hashTable= new DSA.HashTable.ChainingHash();
 //hashTable.Set("aa", 20);

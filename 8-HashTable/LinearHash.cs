@@ -16,9 +16,22 @@ namespace DSA.HashTable
             Array = new HashArray[size];
         }
 
+        private int Hash(string key)
+        {
+            int hash = 0;
+            char[] chars = key.ToCharArray();
+            for (int i = 0; i < chars.Length; i++)
+            {
+                int ascii = chars[i];
+                hash = (hash + ascii * 23) % Array.Length;
+            }
+
+            return hash;
+        }
+
         public void Set(string key, int value)
         {
-            int index = key.GetHashCode() % Size;
+            int index = Hash(key);
             while (Array[index] != null && !Array[index].Key.Equals(key))
             {
                 index = (index + 1) % Size;
@@ -29,7 +42,7 @@ namespace DSA.HashTable
 
         public int Get(string key)
         {
-            int index = key.GetHashCode() % Size;
+            int index = Hash(key);
             while (Array[index] != null && !Array[index].Key.Equals(key))
             {
                 index = (index + 1) % Size;
@@ -45,7 +58,7 @@ namespace DSA.HashTable
         {
             for(int i=0; i < Size; i++)
             {
-                Console.WriteLine(Array[i].Key + " - " + Array[i].Value);
+                Console.WriteLine(Array[i]?.Key + " - " + Array[i]?.Value);
             }
         }
     }
