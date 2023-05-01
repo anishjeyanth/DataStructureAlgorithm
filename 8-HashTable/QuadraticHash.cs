@@ -79,7 +79,8 @@ namespace DSA.HashTable
         {
             for (int i = 0; i < Size; i++)
             {
-                Console.WriteLine(Array[i]?.Key + " - " + Array[i]?.Value);
+                HashArray hashArray = Array[i];
+                Console.WriteLine(hashArray?.Key + " - " + hashArray?.Value);
             }
         }
     }

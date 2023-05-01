@@ -9,12 +9,13 @@ namespace DSA.HashTable
 {
     public class ChainingHash
     {
-        public int Size = 20;
+        public int Size;
         HNode[] ListMap;
         
-        public ChainingHash()
+        public ChainingHash(int size)
         {
-            ListMap = new HNode[Size];
+            ListMap = new HNode[size];
+            Size = size;
         }
 
         private int Hash(string key)
@@ -76,7 +77,7 @@ namespace DSA.HashTable
             return 0;
         }
 
-        public List<int> AllValues()
+        public List<int> List()
         {
             List<int> keys = new List<int>();
             for(int i =0;i < ListMap.Length; i++)

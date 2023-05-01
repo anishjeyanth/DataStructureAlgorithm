@@ -35,7 +35,7 @@ namespace DSA.HashTable
             int offset = 1;
             while (Array[index] != null && !Array[index].Key.Equals(key))
             {
-                index = (index + offset * (Hash(key) % (Size- 2) + 1)) % Size;
+                index = (index + offset * (Hash(key) % (Size - 2) + 1)) % Size;
                 offset++;
             }
 
@@ -68,7 +68,8 @@ namespace DSA.HashTable
         {
             for (int i = 0; i < Size; i++)
             {
-                Console.WriteLine(Array[i]?.Key + " - " + Array[i]?.Value);
+                HashArray hashArray = Array[i];
+                Console.WriteLine(hashArray?.Key + " - " + hashArray?.Value);
             }
         }
     }
