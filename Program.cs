@@ -3,8 +3,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 DSA.Search.BinarySearch binarySearch = new DSA.Search.BinarySearch();
-Console.WriteLine(binarySearch.SearchArray(new int[] { 2,4,8,15,26,37,48,50,60,62,65 }, 7));
-Console.WriteLine(binarySearch.SearchArray(new int[] { 2, 4, 8, 15, 26, 37, 48, 50, 60, 62, 65 }, 60));
+Console.WriteLine(binarySearch.SearchArray(new int[] { 2,4,8,15,26,37,48,50,60,62,65,88 }, 7));
+Console.WriteLine(binarySearch.SearchArray(new int[] { 2, 4, 8, 15, 26, 37, 48, 50, 60, 62, 65, 88 }, 65));
 Console.WriteLine(binarySearch.SearchString("Fear leads to anger; anger leads to hatred; hatred leads to conflict; conflict leads to suffering", "hat"));
 Console.WriteLine(binarySearch.SearchString("Fear leads to anger; anger leads to hatred; hatred leads to conflict; conflict leads to suffering", "cona"));
 
