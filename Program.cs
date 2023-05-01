@@ -1,19 +1,21 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-DSA.HashTable.HashTable hashTable= new DSA.HashTable.HashTable();
-hashTable.Set("aa", 20);
-hashTable.Set("bb", 85);
-hashTable.Set("cc", 23);
-hashTable.Set("dd", 45);
-hashTable.Set("ee", 98);
-hashTable.Set("ff", 10);
-hashTable.Set("gg", 28);
-hashTable.Set("hh", 64);
-hashTable.Set("ii", 09);
-hashTable.Set("jj", 45);
-hashTable.Set("kk", 76);
-hashTable.AllValues().ForEach(c=> { Console.Write(c + " - "); });
+DSA.HashTable.LinearHash linearHash = new DSA.HashTable.LinearHash();
+
+//DSA.HashTable.ChainingHash hashTable= new DSA.HashTable.ChainingHash();
+//hashTable.Set("aa", 20);
+//hashTable.Set("bb", 85);
+//hashTable.Set("cc", 23);
+//hashTable.Set("dd", 45);
+//hashTable.Set("ee", 98);
+//hashTable.Set("ff", 10);
+//hashTable.Set("gg", 28);
+//hashTable.Set("hh", 64);
+//hashTable.Set("ii", 09);
+//hashTable.Set("jj", 45);
+//hashTable.Set("kk", 76);
+//hashTable.AllValues().ForEach(c=> { Console.Write(c + " - "); });
 
 //DSA.BinaryHeap.BinaryHeap binaryHeap = new DSA.BinaryHeap.BinaryHeap(15);
 //binaryHeap.Push(50);

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DSA.HashTable
 {
-    public class HashTable
+    public class ChainingHash
     {
         public int Size = 20;
         HNode[] ListMap;
         
-        public HashTable()
+        public ChainingHash()
         {
             ListMap = new HNode[Size];
         }
@@ -21,10 +21,10 @@ namespace DSA.HashTable
         {
             int hash = 0;
             char[] chars = key.ToCharArray();
-            for(int i=0; i < chars.Length; i++)
+            for (int i=0; i < chars.Length; i++)
             {
                 int ascii = chars[i];
-                hash = (hash + ascii) % ListMap.Length;
+                hash = (hash + ascii * 23) % ListMap.Length;
             }
 
             return hash;
