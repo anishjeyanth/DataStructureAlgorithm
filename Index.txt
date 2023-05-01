@@ -221,6 +221,8 @@ In case of linear probing, searching is performed linearly. In contrast, quadrat
 Double Hashing technique
 Double hashing is an open addressing technique which is used to avoid the collisions. When the collision occurs then this technique uses the secondary hash of the key. It uses one hash value as an index to move forward until the empty location is found.
 --
+Trie, also called Digital Tree or Prefix Tree
+--
 
 
 

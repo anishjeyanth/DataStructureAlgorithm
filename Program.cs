@@ -1,5 +1,19 @@
-﻿using System.Text.Json;
+﻿using DSA.Trie;
+using System.Text.Json;
 using System.Text.Json.Serialization;
+
+DSA.Trie.Trie trie = new DSA.Trie.Trie();
+trie.Add("anish");
+trie.Add("anitha");
+trie.Add("effie");
+trie.Add("america");
+Console.WriteLine(trie.Search("ani"));
+Console.WriteLine(trie.Search("anit"));
+Console.WriteLine(trie.Search("anitha"));
+Console.WriteLine(trie.Search("amita"));
+Console.WriteLine(trie.Search("america"));
+Console.WriteLine(trie.Search("anidh"));
+
 
 //DSA.HashTable.DoubleHash doubleHash = new DSA.HashTable.DoubleHash(20);
 //doubleHash.Set("aaa", 20);
@@ -49,21 +63,21 @@ using System.Text.Json.Serialization;
 //Console.WriteLine(linearHash.Get("gg"));
 //linearHash.List();
 
-DSA.HashTable.ChainingHash hashTable = new DSA.HashTable.ChainingHash(5);
-hashTable.Set("aaa", 20);
-hashTable.Set("aab", 85);
-hashTable.Set("abb", 23);
-hashTable.Set("bbb", 45);
-hashTable.Set("bbc", 98);
-hashTable.Set("ff", 10);
-hashTable.Set("gg", 28);
-hashTable.Set("hh", 64);
-hashTable.Set("ii", 09);
-hashTable.Set("jj", 45);
-hashTable.Set("kk", 76);
-Console.WriteLine(hashTable.Get("bbb"));
-Console.WriteLine(hashTable.Get("gg"));
-hashTable.List().ForEach(c => { Console.Write(c + " - "); });
+//DSA.HashTable.ChainingHash hashTable = new DSA.HashTable.ChainingHash(5);
+//hashTable.Set("aaa", 20);
+//hashTable.Set("aab", 85);
+//hashTable.Set("abb", 23);
+//hashTable.Set("bbb", 45);
+//hashTable.Set("bbc", 98);
+//hashTable.Set("ff", 10);
+//hashTable.Set("gg", 28);
+//hashTable.Set("hh", 64);
+//hashTable.Set("ii", 09);
+//hashTable.Set("jj", 45);
+//hashTable.Set("kk", 76);
+//Console.WriteLine(hashTable.Get("bbb"));
+//Console.WriteLine(hashTable.Get("gg"));
+//hashTable.List().ForEach(c => { Console.Write(c + " - "); });
 
 //DSA.BinaryHeap.BinaryHeap binaryHeap = new DSA.BinaryHeap.BinaryHeap(15);
 //binaryHeap.Push(50);
