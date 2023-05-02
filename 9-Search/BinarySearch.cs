@@ -15,7 +15,7 @@ namespace DSA.Search
 
             while(left <= right)
             {
-                int mid = left + (right - left) / 2;
+                int mid = (left + right) / 2;
                 if (Array[mid] == value)
                     return mid;
                 else if (Array[mid] < value)
