@@ -8,7 +8,7 @@ namespace DSA.Trie
 {
     public class Trie
     {
-        private TrieNode Root;
+        public TrieNode Root;
 
         public Trie() 
         { 
@@ -43,6 +43,37 @@ namespace DSA.Trie
             }
 
             return current.IsEndOfWord;
+        }
+
+        public void Delete(string word)
+        {
+            NodeDelete(Root, word, 0);
+        }
+
+        private bool NodeDelete(TrieNode current, string word, int index)
+        {
+            if (index == word.Length)
+            {
+                if (!current.IsEndOfWord)
+                    return false;
+
+                current.IsEndOfWord = false;
+                return current.Children.Count == 0;
+            }
+
+            char ch = word[index];
+            TrieNode tempNode = current.Children[ch];
+            if (tempNode == null)
+                return false;
+
+            bool toDelete = NodeDelete(tempNode, word, index + 1) && !tempNode.IsEndOfWord;
+            if (toDelete)
+            {
+                current.Children.Remove(ch);
+                return current.Children.Count == 0;
+            }
+
+            return false;
         }
     }
 }
