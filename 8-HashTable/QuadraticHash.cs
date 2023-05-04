@@ -38,7 +38,7 @@ namespace DSA.HashTable
 
             while (Array[index] != null && !Array[index].Key.Equals(key))
             {
-                index = (index + i * 1) % Size;
+                index = (index + i * 11) % Size;
                 i++;
 
                 if(i > Size)
@@ -59,7 +59,7 @@ namespace DSA.HashTable
 
             while (Array[index] != null && !Array[index].Key.Equals(key))
             {
-                index = (index + i * 1) % Size;
+                index = (index + i * 11) % Size;
                 i++;
 
                 if (i > Proble[index])

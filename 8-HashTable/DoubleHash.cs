@@ -44,7 +44,7 @@ namespace DSA.HashTable
 
         public int Get(string key)
         {
-            int index = key.GetHashCode() % Size;
+            int index = Hash(key);
             int offset = 1;
             while (Array[index] != null && !Array[index].Key.Equals(key))
             {

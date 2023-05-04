@@ -223,7 +223,63 @@ Double hashing is an open addressing technique which is used to avoid the collis
 --
 Trie, also called Digital Tree or Prefix Tree
 --
+    public void Insert(int key)
+    {
+        int hash = key % table.Length;
+        int i = 1;
+        while (table[hash] != -1)
+        {
+            hash = (hash + i * i) % table.Length; // quadratic probing
+            i++;
+        }
+        table[hash] = key;
+    }
 
+    public bool Search(int key)
+    {
+        int hash = key % table.Length;
+        int i = 1;
+        while (table[hash] != key)
+        {
+            if (table[hash] == -1)
+            {
+                return false; // key not found
+            }
+            hash = (hash + i * i) % table.Length; // quadratic probing
+            i++;
+        }
+        return true; // key found
+    }
+--
+    public void Add(int key, T value)
+    {
+        int index = key % elements.Length;
+        int i = 0;
+        while (elements[index] != null)
+        {
+            index = (key + i * i) % elements.Length;
+            i++;
+        }
+        elements[index] = value;
+        size++;
+    }
+    
+    public T Get(int key)
+    {
+        int index = key % elements.Length;
+        int i = 0;
+        while (elements[index] != null)
+        {
+            if (elements[index].Equals(key))
+            {
+                return elements[index];
+            }
+            index = (key + i * i) % elements.Length;
+            i++;
+        }
+        return default(T);
+    }
+--
 
 
 

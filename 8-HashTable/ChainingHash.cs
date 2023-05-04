@@ -10,7 +10,7 @@ namespace DSA.HashTable
     public class ChainingHash
     {
         public int Size;
-        HNode[] ListMap;
+        public HNode[] ListMap;
         
         public ChainingHash(int size)
         {
@@ -44,7 +44,7 @@ namespace DSA.HashTable
                 HNode temp = ListMap[index];
                 if(temp.Key == key)
                 {
-                    temp.Value += value;
+                    temp.Value = value;
                     return;
                 }
 
@@ -53,7 +53,7 @@ namespace DSA.HashTable
                     temp = temp.Next;
                     if(temp.Key == key)
                     {
-                        temp.Value += value;
+                        temp.Value = value;
                         return;
                     }
                 }
@@ -66,7 +66,7 @@ namespace DSA.HashTable
         {
             int index = Hash(key);
             HNode temp = ListMap[index];
-            while(temp.Next != null)
+            while(temp != null)
             {
                 if (temp.Key == key)
                     return temp.Value;

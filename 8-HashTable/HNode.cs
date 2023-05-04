@@ -8,9 +8,9 @@ namespace DSA.HashTable
 {
     public class HNode
     {
-        public string Key;
-        public int Value;
-        public HNode Next;
+        public string Key { get; set; }
+        public int Value { get; set; }
+        public HNode Next { get; set; }
 
         public HNode(string key, int value) 
         {
