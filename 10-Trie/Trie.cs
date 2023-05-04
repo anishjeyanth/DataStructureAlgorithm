@@ -62,11 +62,11 @@ namespace DSA.Trie
             }
 
             char ch = word[index];
-            TrieNode tempNode = current.Children[ch];
-            if (tempNode == null)
+            if(!current.Children.Any(x => x.Key == ch))
                 return false;
 
-            bool toDelete = NodeDelete(tempNode, word, index + 1) && !tempNode.IsEndOfWord;
+            TrieNode tempNode = current.Children[ch];
+            bool toDelete = NodeDelete(tempNode, word, index + 1); // && !tempNode.IsEndOfWord;
             if (toDelete)
             {
                 current.Children.Remove(ch);

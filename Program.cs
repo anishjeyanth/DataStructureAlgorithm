@@ -23,9 +23,10 @@ Console.WriteLine(trie.Search("amita"));
 Console.WriteLine(trie.Search("america"));
 Console.WriteLine(trie.Search("anidh"));
 Console.WriteLine(trie.Search("gri"));
+//trie.Delete("an");
 trie.Delete("anish");
-trie.Delete("effie");
-Console.WriteLine(JsonSerializer.Serialize(trie.Root, new JsonSerializerOptions { WriteIndented = true }));
+//trie.Delete("effie");
+//Console.WriteLine(JsonSerializer.Serialize(trie.Root, new JsonSerializerOptions { WriteIndented = true }));
 
 //DSA.HashTable.DoubleHash doubleHash = new DSA.HashTable.DoubleHash(20);
 //doubleHash.Set("aaa", 20);
