@@ -13,13 +13,13 @@ namespace DSA.BinaryHeap
 
         public BinaryHeap(int Size)
         {
-            Array = new int[Size];
+            Array = new int[Size+1];
             SizeOfTree = 0;
         }
 
         public void Push(int data)
         {
-            Array[SizeOfTree] = data;
+            Array[SizeOfTree+1] = data;
             SizeOfTree++;
             MaxHeapify(SizeOfTree);                   
         }
@@ -32,6 +32,7 @@ namespace DSA.BinaryHeap
             {
                 int value = Array[1];
                 Array[1] = Array[SizeOfTree];
+                SizeOfTree--;
                 MinHeapifyTopToBottom(1);
                 return value;
             }
@@ -143,7 +144,7 @@ namespace DSA.BinaryHeap
 
         public void Traverse()
         {
-            for(int i = 0; i < SizeOfTree; i++)
+            for(int i = 1; i <= SizeOfTree; i++)
             {
                 Console.Write(Array[i]+ " - ");
             }

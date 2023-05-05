@@ -93,19 +93,30 @@ using System.Text.Json.Serialization;
 //hashTable.List().ForEach(c => { Console.Write(c + " - "); });
 //Console.WriteLine(JsonSerializer.Serialize(hashTable.ListMap, new JsonSerializerOptions { WriteIndented = true }));
 
-//DSA.BinaryHeap.BinaryHeap binaryHeap = new DSA.BinaryHeap.BinaryHeap(15);
-//binaryHeap.Push(50);
-//binaryHeap.Push(20);
-//binaryHeap.Push(80);
-//binaryHeap.Push(10);
-//binaryHeap.Push(15);
-//binaryHeap.Push(95);
-//binaryHeap.Push(70);
-//binaryHeap.Push(98);
-//binaryHeap.Push(88);
-//binaryHeap.Traverse();
-////Console.WriteLine(binaryHeap.Pop());
-//binaryHeap.Traverse();
+DSA.BinaryHeap.BinaryHeap binaryHeap = new DSA.BinaryHeap.BinaryHeap(15);
+binaryHeap.Push(50);
+binaryHeap.Push(20);
+binaryHeap.Push(80);
+binaryHeap.Push(10);
+binaryHeap.Push(15);
+binaryHeap.Push(95);
+binaryHeap.Push(70);
+binaryHeap.Push(98);
+binaryHeap.Push(88);
+binaryHeap.Traverse();
+Console.WriteLine(binaryHeap.Pop());
+binaryHeap.Traverse();
+
+//               50
+//        20           80
+//    10      15   95       70
+//98      88
+
+
+//               98
+//        95           80
+//    88      15   50       70
+//10      20
 
 
 //DSA.Tree.BinarySearchTree binarySearchTree = new DSA.Tree.BinarySearchTree();
