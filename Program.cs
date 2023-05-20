@@ -1,6 +1,20 @@
-﻿using DSA.Trie;
+﻿using DSA.Graph;
+using DSA.Trie;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+
+GraphAdjacencyList graphAdjacencyList = new GraphAdjacencyList(5);
+graphAdjacencyList.AddEdge(0, 1);
+graphAdjacencyList.AddEdge(0, 1);
+graphAdjacencyList.AddEdge(1, 2);
+graphAdjacencyList.AddEdge(2, 0);
+graphAdjacencyList.AddEdge(2, 3);
+graphAdjacencyList.AddEdge(3, 3);
+
+graphAdjacencyList.BFS(2);
+Console.WriteLine("");
+graphAdjacencyList.DFS(2);
+
 
 //DSA.Search.BinarySearch binarySearch = new DSA.Search.BinarySearch();
 //Console.WriteLine(binarySearch.SearchArray(new int[] { 2,4,8,15,26,37,48,50,60,62,65,88 }, 7));
@@ -93,19 +107,19 @@ using System.Text.Json.Serialization;
 //hashTable.List().ForEach(c => { Console.Write(c + " - "); });
 //Console.WriteLine(JsonSerializer.Serialize(hashTable.ListMap, new JsonSerializerOptions { WriteIndented = true }));
 
-DSA.BinaryHeap.BinaryHeap binaryHeap = new DSA.BinaryHeap.BinaryHeap(15);
-binaryHeap.Push(50);
-binaryHeap.Push(20);
-binaryHeap.Push(80);
-binaryHeap.Push(10);
-binaryHeap.Push(15);
-binaryHeap.Push(95);
-binaryHeap.Push(70);
-binaryHeap.Push(98);
-binaryHeap.Push(88);
-binaryHeap.Traverse();
-Console.WriteLine(binaryHeap.Pop());
-binaryHeap.Traverse();
+//DSA.BinaryHeap.BinaryHeap binaryHeap = new DSA.BinaryHeap.BinaryHeap(15);
+//binaryHeap.Push(50);
+//binaryHeap.Push(20);
+//binaryHeap.Push(80);
+//binaryHeap.Push(10);
+//binaryHeap.Push(15);
+//binaryHeap.Push(95);
+//binaryHeap.Push(70);
+//binaryHeap.Push(98);
+//binaryHeap.Push(88);
+//binaryHeap.Traverse();
+//Console.WriteLine(binaryHeap.Pop());
+//binaryHeap.Traverse();
 
 //               50
 //        20           80

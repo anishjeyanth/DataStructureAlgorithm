@@ -280,6 +280,29 @@ Trie, also called Digital Tree or Prefix Tree
         return default(T);
     }
 --
-
-
-
+Priority Queue is same as Binary Heap instead of comparing the value check the priority.
+public class Node
+{
+    public string value;
+    public int priority;
+}
+rightChild.priority < leftChild.priority
+--
+Different shortest path algorithms, such as Dijkstra's algorithm, Bellman-Ford algorithm, and Floyd-Warshall algorithm
+--
+BFS - Shortest Path
+--
+Vertex, Edge
+Undirected Graph - Facebook Firends, 
+Directed Graph - Instagram Follow
+Weighted Graph - 
+UnWeighted Graph -
+Cyclic Graph - Path from a node to itself
+Acyclic Graph - Tree is directed acyclic graph
+Positive or Negative weighted graph -
+Undirected Graph are Cyclic Graph
+--
+Adjacency List
+Adjacency Matrix
+O(V + E)
+--
