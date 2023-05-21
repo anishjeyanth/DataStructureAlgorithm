@@ -8,57 +8,107 @@ namespace DSA.Graph
 {
     public class GraphAdjacencyList
     {
-        private int Vertices;
-        private List<int>[] Adjacency;
+        private Dictionary<string, List<string>> AdjacencyList;
 
-        public GraphAdjacencyList(int vertices)
+        public GraphAdjacencyList()
         {
-            Vertices = vertices;
-            Adjacency = new List<int>[Vertices];
-
-            for(int i=0;i< Vertices;i++)
-                Adjacency[i] = new List<int>();
+            AdjacencyList = new Dictionary<string, List<string>>();
         }
 
-        public void AddEdge(int vertex1, int vertex2)
+        public void AddVertex(string vertex)
         {
-            Adjacency[vertex1].Add(vertex2);
-        }
-
-        public void DFS(int v)
-        {
-            bool[] visisted = new bool[Vertices];
-            DFSR(v, visisted);
-        }
-
-        private void DFSR(int v, bool[] visisted)
-        {
-            visisted[v] = true;
-            Console.Write(v + " - ");
-            foreach(int i in Adjacency[v])
+            if (!AdjacencyList.ContainsKey(vertex))
             {
-                if (!visisted[i])
-                    DFSR(i, visisted);
+                AdjacencyList.Add(vertex, new List<string>());
             }
         }
 
-        public void BFS(int s)
+        public void AddEdge(string v1, string v2)
         {
-            bool[] visisted = new bool[Vertices];
-            visisted[s] = true;
-            Queue<int> queue = new Queue<int>();
-            queue.Enqueue(s);
+            AdjacencyList[v1].Add(v2);
+            AdjacencyList[v2].Add(v1);
+        }
 
-            while(queue.Count > 0)
+        public void RemoveEdge(string v1, string v2)
+        {
+            AdjacencyList[v1].Remove(v2);
+            AdjacencyList[v2].Remove(v1);
+        }
+
+        public void RemoveVertex(string vertex)
+        {
+            while (AdjacencyList[vertex].Count > 0)
             {
-                s = queue.Dequeue();
-                Console.Write(s + " - ");
-                foreach(int i in Adjacency[s])
+                string adjacent = AdjacencyList[vertex][AdjacencyList[vertex].Count - 1];
+                RemoveEdge(vertex, adjacent);
+            }
+            AdjacencyList.Remove(vertex);
+        }
+
+        public List<string> BFS(string start)
+        {
+            Queue<string> queue = new Queue<string>();
+            Dictionary<string, bool> visited = new Dictionary<string, bool>();
+
+            string currentVertex;
+            visited[start] = true;
+
+            while (queue.Count > 0)
+            {
+                currentVertex = queue.Dequeue();
+                Console.Write(currentVertex + "-");
+
+                foreach (string neighbor in AdjacencyList[currentVertex])
                 {
-                    if (!visisted[i])
+                    if (!visited.ContainsKey(neighbor))
                     {
-                        visisted[i] = true;
-                        queue.Enqueue(i);
+                        visited[neighbor] = true;
+                        queue.Enqueue(neighbor);
+                    }
+                }
+            }
+        }
+
+        public void DFSRecursive(string start)
+        {
+            Dictionary<string, bool> visited = new Dictionary<string, bool>();
+            DFS(start);
+
+            void DFS(string vertex)
+            {
+                if (vertex == null)
+                    return;
+
+                visited[vertex] = true;
+                Console.Write(vertex + "-");
+                foreach (string neighbout in AdjacencyList[vertex])
+                {
+                    if (!visited.ContainsKey(neighbout))
+                        DFS(neighbout);
+                }
+            }
+        }
+
+        public void DFSIterative(string start)
+        {
+            Stack<string> stack = new Stack<string>();
+            Dictionary<string, bool> visited = new Dictionary<string, bool>();
+
+            string currentVertex;
+            stack.Push(start);
+            visited[start] = true;
+
+            while(stack.Count > 0)
+            {
+                currentVertex = stack.Pop();
+                Console.Write(currentVertex + "-");
+
+                foreach (string neighbout in AdjacencyList[currentVertex])
+                {
+                    if (!visited.ContainsKey(neighbout))
+                    {
+                        visited[neighbout] = true;
+                        stack.Push(neighbout);
                     }
                 }
             }

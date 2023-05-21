@@ -3,17 +3,8 @@ using DSA.Trie;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-GraphAdjacencyList graphAdjacencyList = new GraphAdjacencyList(5);
-graphAdjacencyList.AddEdge(0, 1);
-graphAdjacencyList.AddEdge(0, 1);
-graphAdjacencyList.AddEdge(1, 2);
-graphAdjacencyList.AddEdge(2, 0);
-graphAdjacencyList.AddEdge(2, 3);
-graphAdjacencyList.AddEdge(3, 3);
+GraphAdjacencyList graphAdjacencyList = new GraphAdjacencyList();
 
-graphAdjacencyList.BFS(2);
-Console.WriteLine("");
-graphAdjacencyList.DFS(2);
 
 
 //DSA.Search.BinarySearch binarySearch = new DSA.Search.BinarySearch();
