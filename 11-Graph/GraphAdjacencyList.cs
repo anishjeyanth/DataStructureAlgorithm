@@ -45,12 +45,13 @@ namespace DSA.Graph
             AdjacencyList.Remove(vertex);
         }
 
-        public List<string> BFS(string start)
+        public void BFS(string start)
         {
             Queue<string> queue = new Queue<string>();
             Dictionary<string, bool> visited = new Dictionary<string, bool>();
 
             string currentVertex;
+            queue.Enqueue(start);
             visited[start] = true;
 
             while (queue.Count > 0)

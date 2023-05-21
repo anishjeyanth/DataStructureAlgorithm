@@ -4,6 +4,22 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 GraphAdjacencyList graphAdjacencyList = new GraphAdjacencyList();
+graphAdjacencyList.AddVertex("A");
+graphAdjacencyList.AddVertex("B");
+graphAdjacencyList.AddVertex("C");
+graphAdjacencyList.AddVertex("D");
+graphAdjacencyList.AddVertex("E");
+graphAdjacencyList.AddVertex("F");
+
+graphAdjacencyList.AddEdge("A", "B");
+graphAdjacencyList.AddEdge("A", "C");
+graphAdjacencyList.AddEdge("B", "D");
+graphAdjacencyList.AddEdge("C", "E");
+graphAdjacencyList.AddEdge("D", "E");
+graphAdjacencyList.AddEdge("D", "F");
+graphAdjacencyList.AddEdge("E", "F");
+
+graphAdjacencyList.BFS("F");
 
 
 
