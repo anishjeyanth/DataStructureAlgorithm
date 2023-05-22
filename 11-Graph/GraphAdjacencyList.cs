@@ -8,7 +8,7 @@ namespace DSA.Graph
 {
     public class GraphAdjacencyList
     {
-        private Dictionary<string, List<string>> AdjacencyList;
+        public Dictionary<string, List<string>> AdjacencyList;
 
         public GraphAdjacencyList()
         {
@@ -37,9 +37,10 @@ namespace DSA.Graph
 
         public void RemoveVertex(string vertex)
         {
-            while (AdjacencyList[vertex].Count > 0)
+            while (AdjacencyList[vertex].Any())
             {
-                string adjacent = AdjacencyList[vertex][AdjacencyList[vertex].Count - 1];
+                int index = AdjacencyList[vertex].Count - 1;
+                string adjacent = AdjacencyList[vertex][index];
                 RemoveEdge(vertex, adjacent);
             }
             AdjacencyList.Remove(vertex);
@@ -54,10 +55,10 @@ namespace DSA.Graph
             queue.Enqueue(start);
             visited[start] = true;
 
-            while (queue.Count > 0)
+            while (queue.Any())
             {
                 currentVertex = queue.Dequeue();
-                Console.Write(currentVertex + "-");
+                Console.Write(currentVertex + " - ");
 
                 foreach (string neighbor in AdjacencyList[currentVertex])
                 {
@@ -68,6 +69,8 @@ namespace DSA.Graph
                     }
                 }
             }
+
+            Console.WriteLine();
         }
 
         public void DFSRecursive(string start)
@@ -81,13 +84,15 @@ namespace DSA.Graph
                     return;
 
                 visited[vertex] = true;
-                Console.Write(vertex + "-");
-                foreach (string neighbout in AdjacencyList[vertex])
+                Console.Write(vertex + " - ");
+                foreach (string neighbout in AdjacencyList[vertex].Select(x => x).Reverse()) // reverse is to print DFS in order
                 {
                     if (!visited.ContainsKey(neighbout))
                         DFS(neighbout);
                 }
             }
+
+            Console.WriteLine();
         }
 
         public void DFSIterative(string start)
@@ -99,10 +104,10 @@ namespace DSA.Graph
             stack.Push(start);
             visited[start] = true;
 
-            while(stack.Count > 0)
+            while(stack.Any())
             {
                 currentVertex = stack.Pop();
-                Console.Write(currentVertex + "-");
+                Console.Write(currentVertex + " - ");
 
                 foreach (string neighbout in AdjacencyList[currentVertex])
                 {
@@ -113,6 +118,8 @@ namespace DSA.Graph
                     }
                 }
             }
+
+            Console.WriteLine();
         }
     }
 }

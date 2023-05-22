@@ -35,8 +35,9 @@ namespace DSA.Graph
             {
                 for (int j = 0; j < VertexCount; j++)
                 {
-                    Console.WriteLine(Matrix[i, j] + " - ");
+                    Console.Write(Matrix[i, j] + " - ");
                 }
+                Console.WriteLine();
             }
         }
 
