@@ -301,8 +301,15 @@ Cyclic Graph - Path from a node to itself
 Acyclic Graph - Tree is directed acyclic graph
 Positive or Negative weighted graph -
 Undirected Graph are Cyclic Graph
+
+Dense graphs have many edges.
+When the number of edges in the graph is close to the maximum number of edges, the graph is dense
+
+Sparse Graphs
+When the number of edges in the graph is significantly fewer than the maximum number of edges, the graph is sparse. 
+
+Adjacency Matrix for representing Dense Graphs and Adjacency List for representing Sparse Graphs
 --
-Adjacency List
-Adjacency Matrix
 O(V + E)
---
+|V| = Total number of vertices (nodes) in the graph.
+|E| = Total number of connections (edges) in the graph.

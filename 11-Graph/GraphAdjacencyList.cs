@@ -28,13 +28,7 @@ namespace DSA.Graph
             AdjacencyList[v1].Add(v2);
             AdjacencyList[v2].Add(v1);
         }
-
-        public void RemoveEdge(string v1, string v2)
-        {
-            AdjacencyList[v1].Remove(v2);
-            AdjacencyList[v2].Remove(v1);
-        }
-
+               
         public void RemoveVertex(string vertex)
         {
             while (AdjacencyList[vertex].Any())
@@ -44,6 +38,12 @@ namespace DSA.Graph
                 RemoveEdge(vertex, adjacent);
             }
             AdjacencyList.Remove(vertex);
+        }
+
+        private void RemoveEdge(string v1, string v2)
+        {
+            AdjacencyList[v1].Remove(v2);
+            AdjacencyList[v2].Remove(v1);
         }
 
         public void BFS(string start)

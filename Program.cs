@@ -3,19 +3,36 @@ using DSA.Trie;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-GraphAdjacencyMatrix graphAdjacencyMatrix = new GraphAdjacencyMatrix(6);
+GraphAdjacencyMatrix graphAdjacencyMatrix = new GraphAdjacencyMatrix(7);
 graphAdjacencyMatrix.AddEdge(0, 1);
 graphAdjacencyMatrix.AddEdge(0, 2);
 graphAdjacencyMatrix.AddEdge(1, 3);
 graphAdjacencyMatrix.AddEdge(2, 4);
 graphAdjacencyMatrix.AddEdge(3, 4);
+graphAdjacencyMatrix.AddEdge(3, 6);
 graphAdjacencyMatrix.AddEdge(3, 5);
-graphAdjacencyMatrix.AddEdge(4, 5);
+graphAdjacencyMatrix.AddEdge(4, 6);
+graphAdjacencyMatrix.AddEdge(5, 6);
 
 graphAdjacencyMatrix.DisplayMatrix();
-graphAdjacencyMatrix.BFS(0);
-graphAdjacencyMatrix.DFS(0);
+graphAdjacencyMatrix.BFS(4);
+graphAdjacencyMatrix.DFS(4);
 
+//graphAdjacencyMatrix.RemoveEdge(3, 4);
+//graphAdjacencyMatrix.DisplayMatrix();
+
+//
+//  { "0", "1", "2", "3", "4", "5", "6" };
+//  { "A", "B", "C", "D", "E", "F", "G" };  
+//
+//          A
+//        /   \
+//       B     C
+//       |     |
+//       D --- E
+//        \  \ |
+//         F - G
+//
 
 //GraphAdjacencyList graphAdjacencyList = new GraphAdjacencyList();
 //graphAdjacencyList.AddVertex("A");
@@ -50,13 +67,6 @@ graphAdjacencyMatrix.DFS(0);
 //graphAdjacencyList.DFSIterative("A");
 //graphAdjacencyList.DFSIterative("E");
 
-//          A
-//        /   \
-//       B     C
-//       |     |
-//       D --- E
-//        \  \ |
-//         F - G
 
 //DSA.Search.BinarySearch binarySearch = new DSA.Search.BinarySearch();
 //Console.WriteLine(binarySearch.SearchArray(new int[] { 2,4,8,15,26,37,48,50,60,62,65,88 }, 7));

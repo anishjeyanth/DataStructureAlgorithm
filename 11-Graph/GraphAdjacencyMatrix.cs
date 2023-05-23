@@ -8,7 +8,7 @@ namespace DSA.Graph
 {
     public class GraphAdjacencyMatrix
     {
-        private int[,] Matrix;
+        public int[,] Matrix;
         private int VertexCount;
 
         public GraphAdjacencyMatrix(int vertex)
@@ -31,14 +31,19 @@ namespace DSA.Graph
 
         public void DisplayMatrix()
         {
+            string[] letter = { "A", "B", "C", "D", "E", "F", "G" };
+
             for (int i = 0; i < VertexCount; i++)
             {
+                Console.Write(letter[i] + " ");
                 for (int j = 0; j < VertexCount; j++)
                 {
-                    Console.Write(Matrix[i, j] + " - ");
+                    Console.Write(Matrix[i, j] + " - ");                
                 }
                 Console.WriteLine();
             }
+
+            Console.WriteLine();
         }
 
         public void BFS(int start)
@@ -49,12 +54,12 @@ namespace DSA.Graph
             visisted[start] = true;
             queue.Enqueue(start);
 
-            while(queue.Count > 0)
+            while(queue.Any())
             {
                 int vertex = queue.Dequeue();
                 Console.Write(vertex+ " - ");
 
-                for(int i=0; i<vertex; i++)
+                for(int i=0; i< VertexCount; i++)
                 {
                     if (Matrix[vertex,i] == 1 && !visisted[i])
                     {
@@ -63,6 +68,8 @@ namespace DSA.Graph
                     }
                 }
             }
+
+            Console.WriteLine();
         }
 
         public void DFS(int start)
@@ -75,6 +82,8 @@ namespace DSA.Graph
                 if (!visited[i])
                     DFSR(i, visited);
             }
+
+            Console.WriteLine();
         }
 
         private void DFSR(int vertex, bool[] visited)
