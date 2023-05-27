@@ -74,7 +74,6 @@ namespace DSA.Sorting
                 }
             }
 
-
             foreach (int a in Arr)
                 Console.Write(a + "-");
 
@@ -115,13 +114,12 @@ namespace DSA.Sorting
                 int[] bucketArray = buckets[i].ToArray();
                 System.Array.Sort(bucketArray);
 
-                for(int j =0; j < bucketArray.Length; j++)
+                for(int j = 0; j < bucketArray.Length; j++)
                 {
                     Arr[currentIndex] = bucketArray[j];
                     currentIndex++;
                 }
             }
-
 
             foreach (int a in Arr)
                 Console.Write(a + "-");

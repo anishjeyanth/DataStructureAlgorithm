@@ -104,7 +104,7 @@ O(Log N) - Divide and Conquer - searching Algorithm
 O(1) - Constant
 
 O(A + B) - diffrent input parameter
-
+O(Log N) + O(N) = O(N Log N)
 --
 O(1): This represents constant time complexity, which means that the algorithm takes the same amount of time regardless of the input size.
 

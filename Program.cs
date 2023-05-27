@@ -1,14 +1,21 @@
 ﻿using DSA.Graph;
+using DSA.Sorting;
 using DSA.Trie;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-int[] arr = { 4, 2, 6, 5, 1, 3 };
-DSA.Sorting.Sort sort = new DSA.Sorting.Sort();
-sort.Bubble(arr);
-sort.Selection(arr);
-sort.Insertion(arr);
-sort.Bucket(arr, 2);
+
+int[] arr1 = { 4, 2, 6, 5, 1, 3, 8, 2, 7 };
+int[] result = MergeSort.Sort(arr1);
+result.ToList().ForEach(c => { Console.Write(c + " - "); });
+
+//int[] arr = { 4, 2, 6, 5, 1, 3, 8, 2, 7 };
+//DSA.Sorting.Sort sort = new DSA.Sorting.Sort();
+//sort.Bubble(arr);
+//sort.Selection(arr);
+//sort.Insertion(arr);
+//sort.Bucket(arr, 3);
 
 
 //GraphAdjacencyMatrix graphAdjacencyMatrix = new GraphAdjacencyMatrix(7);
