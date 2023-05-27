@@ -313,3 +313,8 @@ Adjacency Matrix for representing Dense Graphs and Adjacency List for representi
 O(V + E)
 |V| = Total number of vertices (nodes) in the graph.
 |E| = Total number of connections (edges) in the graph.
+--
+Types of Sorting
+Space used - In Place, Out place 
+Stability - Stable, Unstable
+--

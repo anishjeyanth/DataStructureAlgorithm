@@ -3,20 +3,22 @@ using DSA.Trie;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-GraphAdjacencyMatrix graphAdjacencyMatrix = new GraphAdjacencyMatrix(7);
-graphAdjacencyMatrix.AddEdge(0, 1);
-graphAdjacencyMatrix.AddEdge(0, 2);
-graphAdjacencyMatrix.AddEdge(1, 3);
-graphAdjacencyMatrix.AddEdge(2, 4);
-graphAdjacencyMatrix.AddEdge(3, 4);
-graphAdjacencyMatrix.AddEdge(3, 6);
-graphAdjacencyMatrix.AddEdge(3, 5);
-graphAdjacencyMatrix.AddEdge(4, 6);
-graphAdjacencyMatrix.AddEdge(5, 6);
 
-graphAdjacencyMatrix.DisplayMatrix();
-graphAdjacencyMatrix.BFS(4);
-graphAdjacencyMatrix.DFS(4);
+
+//GraphAdjacencyMatrix graphAdjacencyMatrix = new GraphAdjacencyMatrix(7);
+//graphAdjacencyMatrix.AddEdge(0, 1);
+//graphAdjacencyMatrix.AddEdge(0, 2);
+//graphAdjacencyMatrix.AddEdge(1, 3);
+//graphAdjacencyMatrix.AddEdge(2, 4);
+//graphAdjacencyMatrix.AddEdge(3, 4);
+//graphAdjacencyMatrix.AddEdge(3, 6);
+//graphAdjacencyMatrix.AddEdge(3, 5);
+//graphAdjacencyMatrix.AddEdge(4, 6);
+//graphAdjacencyMatrix.AddEdge(5, 6);
+
+//graphAdjacencyMatrix.DisplayMatrix();
+//graphAdjacencyMatrix.BFS(4);
+//graphAdjacencyMatrix.DFS(4);
 
 //graphAdjacencyMatrix.RemoveEdge(3, 4);
 //graphAdjacencyMatrix.DisplayMatrix();
