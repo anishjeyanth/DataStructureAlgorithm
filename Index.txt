@@ -318,3 +318,5 @@ Types of Sorting
 Space used - In Place, Out place 
 Stability - Stable, Unstable
 --
+Different sorting algo will perform differently for different dataset
+--

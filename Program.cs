@@ -3,6 +3,11 @@ using DSA.Trie;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+int[] arr = { 4, 2, 6, 5, 1, 3 };
+DSA.Sorting.Sort sort = new DSA.Sorting.Sort();
+sort.Bubble(arr);
+sort.Selection(arr);
+sort.Insertion(arr);
 
 
 //GraphAdjacencyMatrix graphAdjacencyMatrix = new GraphAdjacencyMatrix(7);
