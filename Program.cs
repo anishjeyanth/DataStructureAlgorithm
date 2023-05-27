@@ -8,6 +8,7 @@ DSA.Sorting.Sort sort = new DSA.Sorting.Sort();
 sort.Bubble(arr);
 sort.Selection(arr);
 sort.Insertion(arr);
+sort.Bucket(arr, 2);
 
 
 //GraphAdjacencyMatrix graphAdjacencyMatrix = new GraphAdjacencyMatrix(7);
