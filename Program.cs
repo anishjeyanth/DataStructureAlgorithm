@@ -7,8 +7,9 @@ using System.Text.Json.Serialization;
 
 
 int[] arr1 = { 4, 2, 6, 5, 1, 3, 8, 2, 7 };
-int[] result = MergeSort.Sort(arr1);
-result.ToList().ForEach(c => { Console.Write(c + " - "); });
+//MergeSort.Sort(arr1).ToList().ForEach(c => { Console.Write(c + " - "); });
+
+QuickSort.Sort(arr1);
 
 //int[] arr = { 4, 2, 6, 5, 1, 3, 8, 2, 7 };
 //DSA.Sorting.Sort sort = new DSA.Sorting.Sort();
