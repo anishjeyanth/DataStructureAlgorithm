@@ -9,7 +9,7 @@ namespace DSA.ShortestPath
     public class DijkstraAdjacencyList
     {
         private int VerticesCount;
-        public List<(int, int)>[] AdjacencyList;
+        private List<(int, int)>[] AdjacencyList;
 
         public DijkstraAdjacencyList(int verticesCount)
         {
@@ -31,11 +31,13 @@ namespace DSA.ShortestPath
         {
             int[] distance =  new int[VerticesCount];
             bool[] visisted = new bool[VerticesCount];
+            int[] previousNode = new int[VerticesCount];
 
-            for(int i=0; i<VerticesCount; i++)
+            for (int i=0; i<VerticesCount; i++)
             {
                 distance[i] = int.MaxValue;
                 visisted[i] = false;
+                previousNode[i] = -1;
             }
 
             distance[source] = 0;
@@ -44,7 +46,7 @@ namespace DSA.ShortestPath
             {
                 int minDistance = MinimumDistance(distance, visisted);
                 visisted[minDistance]= true;   
-                
+
                 foreach (var edge in AdjacencyList[minDistance])
                 {
                     int destination = edge.Item1;
@@ -54,11 +56,12 @@ namespace DSA.ShortestPath
                         &&  distance[minDistance] + weight < distance[destination])
                     {
                         distance[destination] = distance[minDistance] + weight;
+                        previousNode[destination] = minDistance;
                     }
                 }
             }
 
-            Print(distance);
+            Print(distance, previousNode);
         }
         
         private int MinimumDistance(int[] distance, bool[] visited)
@@ -78,14 +81,13 @@ namespace DSA.ShortestPath
             return minIndex;
         }
 
-        private void Print(int[] distance)
+        private void Print(int[] distance, int[] previousNode)
         {
             Console.WriteLine("Vertex Distance from Source");
             for(int i =0;i < VerticesCount; i++)
             {
-                Console.WriteLine("Node : " + i + " Distance : " + distance[i]);
+                Console.WriteLine("Node : " + i + " Distance : " + distance[i] + " Previous Node : " + previousNode[i]);
             }
         }
-
     }
 }
