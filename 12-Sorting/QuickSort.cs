@@ -15,8 +15,10 @@ namespace DSA.Sorting
             arr[secondIndex] = temp;
         }
 
+        //{ 4, 2, 6, 5, 1, 3, 8, 2, 7 };
         private static int Pivot(int[] arr, int pivotIndex, int endIndex)
         {
+            Console.WriteLine(pivotIndex + " " + endIndex);
             int swapIndex = pivotIndex;
             for(int i= pivotIndex + 1; i <= endIndex; i++)
             {
@@ -34,9 +36,11 @@ namespace DSA.Sorting
 
         private static void SortHelper(int[] arr, int left, int right)
         {
+            Console.WriteLine(left + " - " + right);
             if (left < right)
             {
                 int pivotIndex = Pivot(arr, left, right);
+                Console.WriteLine("Pivot-" + pivotIndex);
                 SortHelper(arr, left, pivotIndex - 1);
                 SortHelper(arr, pivotIndex + 1, right);
             }

@@ -1,17 +1,36 @@
 ﻿using DSA.Graph;
+using DSA.ShortestPath;
 using DSA.Sorting;
 using DSA.Trie;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-int[] arr2 = { 23, 345, 5467, 12, 2345, 9852 };
+int verticesCount = 6;
+DSA.ShortestPath.DijkstraAdjacencyList dijkstra = new DijkstraAdjacencyList(verticesCount);
+// 0,1,2,3,4,5,6,7
+// A,B,C,D,E,F,G,H
+
+dijkstra.AddEdge(0, 1, 2);
+dijkstra.AddEdge(0, 3, 8);
+dijkstra.AddEdge(1, 3, 5);
+dijkstra.AddEdge(1, 4, 6);
+dijkstra.AddEdge(3, 4, 3);
+dijkstra.AddEdge(3, 5, 2);
+dijkstra.AddEdge(4, 2, 9);
+dijkstra.AddEdge(4, 5, 1);
+dijkstra.AddEdge(5, 2, 3);
+
+dijkstra.FindShortestPath(0);
+
+
+//int[] arr2 = { 23, 345, 5467, 12, 2345, 9852 };
 //RadixSort.Sort(arr2).ToList().ForEach(c => { Console.Write(c + " - "); });
 
-int[] arr1 = { 4, 2, 6, 5, 1, 3, 8, 2, 7 };
+//int[] arr1 = { 4, 2, 6, 5, 1, 3, 8, 2, 7 };
 //MergeSort.Sort(arr1).ToList().ForEach(c => { Console.Write(c + " - "); });
 //QuickSort.Sort(arr1);
-HeapSort.Sort(arr1);
+//HeapSort.Sort(arr1);
 
 //int[] arr = { 4, 2, 6, 5, 1, 3, 8, 2, 7 };
 //DSA.Sorting.Sort sort = new DSA.Sorting.Sort();

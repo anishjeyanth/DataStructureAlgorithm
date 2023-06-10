@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSA._12_ShortestPath
+namespace DSA.ShortestPath
 {
-    public class Dijkstra
+    public class DijkstraAdjacencyMatrix
     {
     }
 }
