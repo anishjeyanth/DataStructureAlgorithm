@@ -6,19 +6,54 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+
+
+//     0     1
+//     |  /  |
+//     2     3
+//     |     |
+//     4     |
+//   /   \   |
+//  7     5 --- 6
+
+TopologicalSortAdjacencyMatrix topologicalSortAdjacencyMatrix = new TopologicalSortAdjacencyMatrix(8);
+topologicalSortAdjacencyMatrix.AddEdge(0, 2);
+topologicalSortAdjacencyMatrix.AddEdge(2, 4);
+topologicalSortAdjacencyMatrix.AddEdge(4, 7);
+topologicalSortAdjacencyMatrix.AddEdge(4, 5);
+topologicalSortAdjacencyMatrix.AddEdge(5, 6);
+topologicalSortAdjacencyMatrix.AddEdge(1, 2);
+topologicalSortAdjacencyMatrix.AddEdge(1, 3);
+topologicalSortAdjacencyMatrix.AddEdge(3, 5);
+topologicalSortAdjacencyMatrix.Sort();
+
+
+//TopologicalSortAdjacencyList topologicalSortAdjacencyList = new TopologicalSortAdjacencyList(8);
+//topologicalSortAdjacencyList.AddEdge(0, 2);
+//topologicalSortAdjacencyList.AddEdge(2, 4);
+//topologicalSortAdjacencyList.AddEdge(4, 7);
+//topologicalSortAdjacencyList.AddEdge(4, 5);
+//topologicalSortAdjacencyList.AddEdge(5, 6);
+//topologicalSortAdjacencyList.AddEdge(1, 2);
+//topologicalSortAdjacencyList.AddEdge(1, 3);
+//topologicalSortAdjacencyList.AddEdge(3, 5);
+//topologicalSortAdjacencyList.Sort();
+
+////
 //// 0,1,2,3,4,5,6,7
 //// A,B,C,D,E,F,G,H
+///
 
-DSA.ShortestPath.DijkstraAdjacencyMatrix dijkstra = new DijkstraAdjacencyMatrix();
-int[,] arrMat = {
-            { 0, 2, 0, 8, 0, 0 },
-            { 0, 0, 0, 5, 6, 0 },
-            { 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 3, 2 },
-            { 0, 0, 9, 0, 0, 1 },
-            { 0, 0, 3, 0, 0, 0 }
-        };
-dijkstra.FindShortestPath(arrMat, 0);
+//DSA.ShortestPath.DijkstraAdjacencyMatrix dijkstra = new DijkstraAdjacencyMatrix();
+//int[,] arrMat = {
+//            { 0, 2, 0, 8, 0, 0 },
+//            { 0, 0, 0, 5, 6, 0 },
+//            { 0, 0, 0, 0, 0, 0 },
+//            { 0, 0, 0, 0, 3, 2 },
+//            { 0, 0, 9, 0, 0, 1 },
+//            { 0, 0, 3, 0, 0, 0 }
+//        };
+//dijkstra.FindShortestPath(arrMat, 0);
 
 //int verticesCount = 6;
 //DSA.ShortestPath.DijkstraAdjacencyList dijkstra = new DijkstraAdjacencyList(verticesCount);
