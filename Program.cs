@@ -1,4 +1,5 @@
 ﻿using DSA.Graph;
+using DSA.Greedy;
 using DSA.ShortestPath;
 using DSA.Sorting;
 using DSA.Trie;
@@ -6,6 +7,18 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+
+Item[] items = new Item[]
+        {
+            new Item(10, 60),
+            new Item(20, 100),
+            new Item(30, 120)
+        };
+
+DSA.Greedy.Greedy.FractionalKnapsack(items, 50);
+
+//int[] arr = { 1, 2, 5, 10, 20, 50, 100, 1000 };
+//DSA.Greedy.Greedy.CoinChangeProblem(arr, 2039);
 
 
 //     0     1
@@ -16,16 +29,16 @@ using System.Text.Json.Serialization;
 //   /   \   |
 //  7     5 --- 6
 
-TopologicalSortAdjacencyMatrix topologicalSortAdjacencyMatrix = new TopologicalSortAdjacencyMatrix(8);
-topologicalSortAdjacencyMatrix.AddEdge(0, 2);
-topologicalSortAdjacencyMatrix.AddEdge(2, 4);
-topologicalSortAdjacencyMatrix.AddEdge(4, 7);
-topologicalSortAdjacencyMatrix.AddEdge(4, 5);
-topologicalSortAdjacencyMatrix.AddEdge(5, 6);
-topologicalSortAdjacencyMatrix.AddEdge(1, 2);
-topologicalSortAdjacencyMatrix.AddEdge(1, 3);
-topologicalSortAdjacencyMatrix.AddEdge(3, 5);
-topologicalSortAdjacencyMatrix.Sort();
+//TopologicalSortAdjacencyMatrix topologicalSortAdjacencyMatrix = new TopologicalSortAdjacencyMatrix(8);
+//topologicalSortAdjacencyMatrix.AddEdge(0, 2);
+//topologicalSortAdjacencyMatrix.AddEdge(2, 4);
+//topologicalSortAdjacencyMatrix.AddEdge(4, 7);
+//topologicalSortAdjacencyMatrix.AddEdge(4, 5);
+//topologicalSortAdjacencyMatrix.AddEdge(5, 6);
+//topologicalSortAdjacencyMatrix.AddEdge(1, 2);
+//topologicalSortAdjacencyMatrix.AddEdge(1, 3);
+//topologicalSortAdjacencyMatrix.AddEdge(3, 5);
+//topologicalSortAdjacencyMatrix.Sort();
 
 
 //TopologicalSortAdjacencyList topologicalSortAdjacencyList = new TopologicalSortAdjacencyList(8);
@@ -42,7 +55,7 @@ topologicalSortAdjacencyMatrix.Sort();
 ////
 //// 0,1,2,3,4,5,6,7
 //// A,B,C,D,E,F,G,H
-///
+////
 
 //DSA.ShortestPath.DijkstraAdjacencyMatrix dijkstra = new DijkstraAdjacencyMatrix();
 //int[,] arrMat = {
@@ -55,8 +68,7 @@ topologicalSortAdjacencyMatrix.Sort();
 //        };
 //dijkstra.FindShortestPath(arrMat, 0);
 
-//int verticesCount = 6;
-//DSA.ShortestPath.DijkstraAdjacencyList dijkstra = new DijkstraAdjacencyList(verticesCount);
+//DSA.ShortestPath.DijkstraAdjacencyList dijkstra = new DijkstraAdjacencyList(6);
 //dijkstra.AddEdge(0, 1, 2);
 //dijkstra.AddEdge(0, 3, 8);
 //dijkstra.AddEdge(1, 3, 5);

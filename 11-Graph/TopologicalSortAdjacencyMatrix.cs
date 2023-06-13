@@ -22,20 +22,6 @@ namespace DSA.Graph
             AdjacencyMatrix[source, destination] = 1;
         }
 
-        private void SortR(int vertices, bool[] visited, Stack<int> stack)
-        {
-            visited[vertices] = true;
-            for(int i=0; i < Vertices; i++)
-            {
-                if (AdjacencyMatrix[vertices,i] ==1 && !visited[i])
-                {
-                    SortR(i, visited, stack);
-                }
-            }
-
-            stack.Push(vertices);
-        }
-
         public void Sort()
         {
             bool[] visited = new bool[Vertices];
@@ -48,10 +34,24 @@ namespace DSA.Graph
                 }
             }
 
-            while(stack.Count > 0)
+            while (stack.Count > 0)
             {
                 Console.Write(stack.Pop() + " - ");
             }
         }
+
+        private void SortR(int vertices, bool[] visited, Stack<int> stack)
+        {
+            visited[vertices] = true;
+            for(int i=0; i < Vertices; i++)
+            {
+                if (AdjacencyMatrix[vertices,i] == 1 && !visited[i])
+                {
+                    SortR(i, visited, stack);
+                }
+            }
+
+            stack.Push(vertices);
+        }        
     }
 }

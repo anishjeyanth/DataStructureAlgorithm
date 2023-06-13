@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="15-DivideConquer\" />
+    <Folder Include="16-Dynamic\" />
+  </ItemGroup>
+
 </Project>
