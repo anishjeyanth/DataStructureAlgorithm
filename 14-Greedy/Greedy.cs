@@ -50,7 +50,7 @@ namespace DSA.Greedy
             double totalValue = 0;
             int remainingCapacity = Capacity;
 
-            foreach(var item in items)
+            foreach(Item item in items)
             {
                 if (remainingCapacity <= 0)
                     break;
@@ -69,6 +69,5 @@ namespace DSA.Greedy
 
             Console.WriteLine(totalValue);
         }
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using DSA.Graph;
+﻿using DSA.DivideConquer;
+using DSA.Graph;
 using DSA.Greedy;
 using DSA.ShortestPath;
 using DSA.Sorting;
@@ -7,15 +8,21 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+DivideConquer divideConquer = new DivideConquer();
+//divideConquer.HouseRobber(new int[] {6,7,1,30,8,2,4 });
+//divideConquer.ConvertOneStringToAnother("table", "tbres");
+int[] profile = { 31, 26, 17, 72 };
+int[] weight = { 3, 1, 2, 5 };
+divideConquer.ZeroOneKnapsack(profile, weight, 7);
 
-Item[] items = new Item[]
-        {
-            new Item(10, 60),
-            new Item(20, 100),
-            new Item(30, 120)
-        };
+//Item[] items = new Item[]
+//        {
+//            new Item(10, 60),
+//            new Item(20, 100),
+//            new Item(30, 120)
+//        };
 
-DSA.Greedy.Greedy.FractionalKnapsack(items, 50);
+//DSA.Greedy.Greedy.FractionalKnapsack(items, 50);
 
 //int[] arr = { 1, 2, 5, 10, 20, 50, 100, 1000 };
 //DSA.Greedy.Greedy.CoinChangeProblem(arr, 2039);
