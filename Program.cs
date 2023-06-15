@@ -11,9 +11,20 @@ using System.Text.Json.Serialization;
 DivideConquer divideConquer = new DivideConquer();
 //divideConquer.HouseRobber(new int[] {6,7,1,30,8,2,4 });
 //divideConquer.ConvertOneStringToAnother("table", "tbres");
-int[] profile = { 31, 26, 17, 72 };
-int[] weight = { 3, 1, 2, 5 };
-divideConquer.ZeroOneKnapsack(profile, weight, 7);
+//int[] profile = { 31, 26, 17, 72 };
+//int[] weight = { 3, 1, 2, 5 };
+//divideConquer.ZeroOneKnapsack(profile, weight, 7);
+//divideConquer.LongestCommonSubsequence("elephant", "erepats");
+//divideConquer.LongestPalindromicSubsequence("elrmenmets");
+int[,] arr =
+{
+    {4,7,8,6,4 },
+    {6,7,3,9,2 }, 
+    {3,8,1,2,4 }, 
+    {7,1,7,3,7 }, 
+    {2,9,8,9,3 }, 
+};
+Console.WriteLine(divideConquer.MinCostToReachLastCell(arr, arr.Length - 1, arr.GetLength(1)-1));
 
 //Item[] items = new Item[]
 //        {
