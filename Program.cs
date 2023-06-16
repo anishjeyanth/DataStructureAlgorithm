@@ -1,4 +1,5 @@
 ﻿using DSA.DivideConquer;
+using DSA.Dynamic;
 using DSA.Graph;
 using DSA.Greedy;
 using DSA.ShortestPath;
@@ -8,7 +9,12 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-DivideConquer divideConquer = new DivideConquer();
+HouseRobber houseRobber = new HouseRobber();
+Console.WriteLine(houseRobber.MaxMoneyTopDown(new int[] { 6, 7, 1, 30, 8, 2, 4 }));
+//Console.WriteLine(houseRobber.MaxMoneyBottomUp(new int[] { 6, 7, 1, 30, 8, 2, 4 }));
+
+//DivideConquer divideConquer = new DivideConquer();
+//Console.WriteLine(divideConquer.NumberFactor(5));
 //divideConquer.HouseRobber(new int[] {6,7,1,30,8,2,4 });
 //divideConquer.ConvertOneStringToAnother("table", "tbres");
 //int[] profile = { 31, 26, 17, 72 };
@@ -16,15 +22,15 @@ DivideConquer divideConquer = new DivideConquer();
 //divideConquer.ZeroOneKnapsack(profile, weight, 7);
 //divideConquer.LongestCommonSubsequence("elephant", "erepats");
 //divideConquer.LongestPalindromicSubsequence("elrmenmets");
-int[,] arr =
-{
-    {4,7,1,6 },
-    {5,7,3,9 }, 
-    {3,2,1,2 }, 
-    {7,1,6,3 }, 
-};
+//int[,] arr =
+//{
+//    {4,7,1,6 },
+//    {5,7,3,9 }, 
+//    {3,2,1,2 }, 
+//    {7,1,6,3 }, 
+//};
 //Console.WriteLine(divideConquer.MinCostToReachLastCell(arr, arr.GetLength(0) - 1, arr.GetLength(1) - 1));
-Console.WriteLine(divideConquer.NumberOfPathsToReachLastCell(arr, arr.GetLength(0) - 1, arr.GetLength(1) - 1, 25));
+//Console.WriteLine(divideConquer.NumberOfPathsToReachLastCell(arr, arr.GetLength(0) - 1, arr.GetLength(1) - 1, 25));
 
 //Item[] items = new Item[]
 //        {

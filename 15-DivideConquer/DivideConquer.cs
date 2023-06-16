@@ -9,6 +9,23 @@ namespace DSA.DivideConquer
     public class DivideConquer
     {
 
+        public int NumberFactor(int n)
+        {
+            if ((n == 0) || (n == 1) || (n == 2))
+            {
+                return 1;
+            }
+            if (n == 3)
+            {
+                return 2; //{1,1,1} {3}
+            }
+            int sub1 = NumberFactor(n - 1);
+            int sub2 = NumberFactor(n - 3);
+            int sub3 = NumberFactor(n - 4);
+
+            return sub1 + sub2 + sub3;
+        }
+
         private int MaxMoneyR(int[] houseNetWorth, int currentIndex)
         {
             if(currentIndex >= houseNetWorth.Length)
