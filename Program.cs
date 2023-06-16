@@ -18,13 +18,13 @@ DivideConquer divideConquer = new DivideConquer();
 //divideConquer.LongestPalindromicSubsequence("elrmenmets");
 int[,] arr =
 {
-    {4,7,8,6,4 },
-    {6,7,3,9,2 }, 
-    {3,8,1,2,4 }, 
-    {7,1,7,3,7 }, 
-    {2,9,8,9,3 }, 
+    {4,7,1,6 },
+    {5,7,3,9 }, 
+    {3,2,1,2 }, 
+    {7,1,6,3 }, 
 };
-Console.WriteLine(divideConquer.MinCostToReachLastCell(arr, arr.Length - 1, arr.GetLength(1)-1));
+//Console.WriteLine(divideConquer.MinCostToReachLastCell(arr, arr.GetLength(0) - 1, arr.GetLength(1) - 1));
+Console.WriteLine(divideConquer.NumberOfPathsToReachLastCell(arr, arr.GetLength(0) - 1, arr.GetLength(1) - 1, 25));
 
 //Item[] items = new Item[]
 //        {

@@ -124,7 +124,7 @@ namespace DSA.DivideConquer
             Console.WriteLine(FindLPSLength(st, 0, st.Length - 1));
         }
 
-        public int MinCostToReachLastCell(int[,] cost, int row, int col)
+        public int MinCostToReachLastCell(int[,] array, int row, int col)
         {
             if (row == -1 || col == -1)
             {
@@ -132,12 +132,42 @@ namespace DSA.DivideConquer
             }
             if (row == 0 && col == 0)
             {
-                return cost[0, 0];
+                return array[0, 0];
             }
-            int minCost1 = MinCostToReachLastCell(cost, row, col - 1);
-            int minCost2 = MinCostToReachLastCell(cost, row - 1, col);
+
+            int minCost1 = MinCostToReachLastCell(array, row, col - 1);
+            int minCost2 = MinCostToReachLastCell(array, row - 1, col);
             int minCost = Math.Min(minCost1, minCost2);
-            return minCost + cost[row, col];
+            return minCost + array[row, col];
         }
+
+        public int NumberOfPathsToReachLastCell(int[,] array, int row, int col, int cost)
+        {
+            if (cost < 0)
+            {
+                return 0;
+            }
+
+            if (row == 0 && col == 0)
+            {
+                return (array[0, 0] - cost == 0) ? 1 : 0;
+            }
+
+            if (row == 0)
+            {
+                return NumberOfPathsToReachLastCell(array, 0, col - 1, cost - array[row, col]);
+            }
+
+            if (col == 0)
+            {
+                return NumberOfPathsToReachLastCell(array, row - 1, 0, cost - array[row, col]);
+            }
+
+            int noOfPathsFromPreviousRow = NumberOfPathsToReachLastCell(array, row - 1, col, cost - array[row, col]);
+            int noOfPathsFromPreviousCol = NumberOfPathsToReachLastCell(array, row, col - 1, cost - array[row, col]);
+
+            return noOfPathsFromPreviousRow + noOfPathsFromPreviousCol;
+        }
+
     }
 }
