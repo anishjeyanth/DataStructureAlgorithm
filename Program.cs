@@ -9,8 +9,8 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-HouseRobber houseRobber = new HouseRobber();
-Console.WriteLine(houseRobber.MaxMoneyTopDown(new int[] { 6, 7, 1, 30, 8, 2, 4 }));
+//HouseRobber houseRobber = new HouseRobber();
+//Console.WriteLine(houseRobber.MaxMoneyTopDown(new int[] { 6, 7, 1, 30, 8, 2, 4 }));
 //Console.WriteLine(houseRobber.MaxMoneyBottomUp(new int[] { 6, 7, 1, 30, 8, 2, 4 }));
 
 //DivideConquer divideConquer = new DivideConquer();

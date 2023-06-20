@@ -14,6 +14,8 @@ namespace DSA.Dynamic
             return MaxMoneyTopDown(dp, houseNetWorth, 0);
         }
 
+        //{ 6, 7, 1, 30, 8, 2, 4 }
+
         private int MaxMoneyTopDown(int[] dp, int[] houseNetWorth, int currentIndex)
         {
             if (currentIndex >= houseNetWorth.Length)
@@ -21,7 +23,8 @@ namespace DSA.Dynamic
 
             if (dp[currentIndex] == 0)
             {
-                int stealCurrent = houseNetWorth[currentIndex] + MaxMoneyTopDown(dp, houseNetWorth, currentIndex + 2);
+                int max = MaxMoneyTopDown(dp, houseNetWorth, currentIndex + 2);
+                int stealCurrent = houseNetWorth[currentIndex] + max;
                 int skipCurrent = MaxMoneyTopDown(dp, houseNetWorth, currentIndex + 1);
                 dp[currentIndex] = Math.Max(stealCurrent, skipCurrent);
             }
