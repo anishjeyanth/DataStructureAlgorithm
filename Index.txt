@@ -1,4 +1,11 @@
-﻿https://visualgo.net/
+﻿N-Ary Tree
+B+ Tree
+Huffman Encoding
+Compressed Tries
+Bloom Filter
+
+
+https://visualgo.net/
 
 https://eylearning.udemy.com/course/master-the-coding-interview-data-structures-algorithms/learn/lecture/12139582#overview
 https://eylearning.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344106#overview
@@ -372,4 +379,8 @@ The Floyd Warshall Algorithm is for solving all pairs of shortest-path problems.
 It is an algorithm for finding the shortest path between all the pairs of vertices in a weighted graph. This algorithm follows the dynamic programming approach to find the shortest path.
 --
 Bellman ford algorithm is a single-source shortest path algorithm. This algorithm is used to find the shortest distance from the single vertex to all the other vertices of a weighted graph. There are various other algorithms used to find the shortest path like Dijkstra algorithm, etc. If the weighted graph contains the negative weight values, then the Dijkstra algorithm does not confirm whether it produces the correct answer or not. In contrast to Dijkstra algorithm, bellman ford algorithm guarantees the correct answer even if the weighted graph contains the negative weight values.
-
+--
+three critical metrics to measure the performance of a data structure: write amplification, read amplification, and space amplification.
+B-tree has less read amplification than an LSM-tree while an LSM-tree has less write amplification than a B-tree.
+--
+Graph = (Vertices, Edges)

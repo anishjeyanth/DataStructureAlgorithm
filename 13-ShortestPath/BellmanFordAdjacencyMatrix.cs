@@ -35,14 +35,14 @@ namespace DSA.ShortestPath
 
             for (int i = 0; i < VerticesCount - 1; i++)
             {
-                for (int u = 0; u < VerticesCount; u++)
+                for (int row = 0; row < VerticesCount; row++)
                 {
-                    for (int v = 0; v < VerticesCount; v++)
+                    for (int col = 0; col < VerticesCount; col++)
                     {
-                        if (AdjacencyMatrix[u,v] != 0 && Distance[u] != int.MaxValue &&
-                            Distance[u] + AdjacencyMatrix[u,v] < Distance[v])
+                        if (AdjacencyMatrix[row,col] != 0 && Distance[row] != int.MaxValue &&
+                            Distance[row] + AdjacencyMatrix[row,col] < Distance[col])
                         {
-                            Distance[v] = Distance[u] + AdjacencyMatrix[u, v];
+                            Distance[col] = Distance[row] + AdjacencyMatrix[row, col];
                         }
                     }
                 }
@@ -50,7 +50,7 @@ namespace DSA.ShortestPath
 
             for (int i = 0; i < VerticesCount; i++)
             {
-                Console.Write(Distance[i] + " - ");
+                Console.Write(Distance[i] + " | ");
             }
         }
     }

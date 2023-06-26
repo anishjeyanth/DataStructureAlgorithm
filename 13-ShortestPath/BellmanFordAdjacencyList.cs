@@ -24,7 +24,7 @@ namespace DSA.ShortestPath
         {
             VerticesCount = verticesCount;
             EdgeCount = edgeCount;
-            Edges = new Edge[verticesCount];
+            Edges = new Edge[edgeCount];
             Distance = new int[verticesCount];
         }
 
@@ -61,7 +61,7 @@ namespace DSA.ShortestPath
 
             for (int i = 0; i < VerticesCount; i++)
             {
-                Console.Write(Distance[i] + " - ");
+                Console.Write(Distance[i] + " | ");
             }
         }
     }

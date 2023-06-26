@@ -9,6 +9,29 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+
+//BellmanFordAdjacencyMatrix bellmanFordAM = new BellmanFordAdjacencyMatrix(5);
+//bellmanFordAM.AddEdge(0, 1, -1);
+//bellmanFordAM.AddEdge(0, 2, 4);
+//bellmanFordAM.AddEdge(1, 2, 3);
+//bellmanFordAM.AddEdge(1, 3, 2);
+//bellmanFordAM.AddEdge(1, 4, 2);
+//bellmanFordAM.AddEdge(3, 2, 5);
+//bellmanFordAM.AddEdge(3, 1, 1);
+//bellmanFordAM.AddEdge(4, 3, -3);
+//bellmanFordAM.FindShortestPath(0);
+
+//BellmanFordAdjacencyList bellmanFordAL = new BellmanFordAdjacencyList(5, 8);
+//bellmanFordAL.AddEdge(0, 1, -1, 0);
+//bellmanFordAL.AddEdge(0, 2, 4, 1);
+//bellmanFordAL.AddEdge(1, 2, 3, 2);
+//bellmanFordAL.AddEdge(1, 3, 2, 3);
+//bellmanFordAL.AddEdge(1, 4, 2, 4);
+//bellmanFordAL.AddEdge(3, 2, 5, 5);
+//bellmanFordAL.AddEdge(3, 1, 1, 6);
+//bellmanFordAL.AddEdge(4, 3, -3, 7);
+//bellmanFordAL.FindShortestPath(3);
+
 //HouseRobber houseRobber = new HouseRobber();
 //Console.WriteLine(houseRobber.MaxMoneyTopDown(new int[] { 6, 7, 1, 30, 8, 2, 4 }));
 //Console.WriteLine(houseRobber.MaxMoneyBottomUp(new int[] { 6, 7, 1, 30, 8, 2, 4 }));
