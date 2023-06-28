@@ -13,7 +13,7 @@ namespace DSA.MinimumSpanningTree
 
         public PrimsAdjacencyList(int Vertices)
         {
-            Vertices = Vertices;
+            this.Vertices = Vertices;
             AdjacencyList = new List<List<Edge>>(Vertices);
 
             for (int i=0; i < Vertices; i++)

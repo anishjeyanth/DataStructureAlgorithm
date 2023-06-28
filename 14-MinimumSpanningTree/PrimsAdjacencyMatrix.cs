@@ -13,7 +13,7 @@ namespace DSA.MinimumSpanningTree
 
         public PrimsAdjacencyMatrix(int Vertices)
         {
-            Vertices = Vertices;
+            this.Vertices = Vertices;
             AdjacencyMatrix = new int[Vertices, Vertices];
         }
 

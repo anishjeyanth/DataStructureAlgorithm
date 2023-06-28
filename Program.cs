@@ -21,6 +21,17 @@ kruskalAdjacencyList.AddEdge(2, 3, 6);
 kruskalAdjacencyList.AddEdge(2, 4, 20);
 kruskalAdjacencyList.MST();
 
+int inf = int.MaxValue;
+int[,] graph = {
+            {0, 5, inf, 10},
+            {inf, 0, 3, inf},
+            {inf, inf, 0, 1},
+            {inf, inf, inf, 0}
+        };
+
+FloydWarshallAdjacencyMatrix floydWarshallAdjacencyMatrix = new FloydWarshallAdjacencyMatrix();
+floydWarshallAdjacencyMatrix.ShortestPath(graph, 4);
+
 //BellmanFordAdjacencyMatrix bellmanFordAM = new BellmanFordAdjacencyMatrix(5);
 //bellmanFordAM.AddEdge(0, 1, -1);
 //bellmanFordAM.AddEdge(0, 2, 4);
