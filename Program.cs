@@ -2,6 +2,7 @@
 using DSA.Dynamic;
 using DSA.Graph;
 using DSA.Greedy;
+using DSA.MinimumSpanningTree;
 using DSA.ShortestPath;
 using DSA.Sorting;
 using DSA.Trie;
@@ -9,6 +10,16 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+
+KruskalAdjacencyList  kruskalAdjacencyList = new KruskalAdjacencyList(5);
+kruskalAdjacencyList.AddEdge(0, 1, 5);
+kruskalAdjacencyList.AddEdge(0, 2, 13);
+kruskalAdjacencyList.AddEdge(0, 4, 15);
+kruskalAdjacencyList.AddEdge(1, 2, 10);
+kruskalAdjacencyList.AddEdge(1, 3, 8);
+kruskalAdjacencyList.AddEdge(2, 3, 6);
+kruskalAdjacencyList.AddEdge(2, 4, 20);
+kruskalAdjacencyList.MST();
 
 //BellmanFordAdjacencyMatrix bellmanFordAM = new BellmanFordAdjacencyMatrix(5);
 //bellmanFordAM.AddEdge(0, 1, -1);
