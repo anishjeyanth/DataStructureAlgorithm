@@ -6,26 +6,21 @@ using System.Threading.Tasks;
 
 namespace DSA.MinimumSpanningTree
 {
-    public class PrimsAdjacencyList
+    public class PrimsAdjacencyMatrix
     {
         private int Vertices;
-        private List<List<Edge>> AdjacencyList;
+        private int[,] AdjacencyMatrix;
 
-        public PrimsAdjacencyList(int Vertices)
+        public PrimsAdjacencyMatrix(int Vertices)
         {
             Vertices = Vertices;
-            AdjacencyList = new List<List<Edge>>(Vertices);
-
-            for (int i=0; i < Vertices; i++)
-            {
-                AdjacencyList.Add(new List<Edge>());
-            }
+            AdjacencyMatrix = new int[Vertices, Vertices];
         }
 
         public void AddEdge(int source, int destination, int weight)
         {
-            AdjacencyList[source].Add(new Edge { Source = source, Destination = destination, Weight = weight });
-            AdjacencyList[destination].Add(new Edge { Source = source, Destination = destination, Weight = weight });
+            AdjacencyMatrix[source, destination] = weight;
+            AdjacencyMatrix[destination, source] = weight;
         }
 
         public void MST()
@@ -41,21 +36,19 @@ namespace DSA.MinimumSpanningTree
             }
 
             key[0] = 0;
+            parent[0] = -1;
 
             for(int count = 0; count < Vertices - 1; count++)
             {
                 int u = MinKey(key, visited);
                 visited[u] = true;
 
-                foreach(Edge edge in AdjacencyList[u])
+                for (int v = 0; v < Vertices; v++)
                 {
-                    int v = edge.Destination;
-                    int weight = edge.Weight;
-
-                    if (!visited[v] && weight < key[v])
+                    if (!visited[v] && AdjacencyMatrix[u, v] != 0 && AdjacencyMatrix[u, v] < key[v])
                     {
                         parent[v] = u;
-                        key[v] = weight;
+                        key[v] = AdjacencyMatrix[u,v];
                     }
                 }
             }
