@@ -10,27 +10,36 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+//
+//        5
+//     0 --- 1
+// 15/ |   / |
+//  4  |13/10|8
+// 20\ | /   |
+//     2 --- 3
+//        6
+//
 
-KruskalAdjacencyList  kruskalAdjacencyList = new KruskalAdjacencyList(5);
-kruskalAdjacencyList.AddEdge(0, 1, 5);
-kruskalAdjacencyList.AddEdge(0, 2, 13);
-kruskalAdjacencyList.AddEdge(0, 4, 15);
-kruskalAdjacencyList.AddEdge(1, 2, 10);
-kruskalAdjacencyList.AddEdge(1, 3, 8);
-kruskalAdjacencyList.AddEdge(2, 3, 6);
-kruskalAdjacencyList.AddEdge(2, 4, 20);
-kruskalAdjacencyList.MST();
+//KruskalAdjacencyList  kruskalAdjacencyList = new KruskalAdjacencyList(5);
+//kruskalAdjacencyList.AddEdge(0, 1, 5);
+//kruskalAdjacencyList.AddEdge(0, 2, 13); 
+//kruskalAdjacencyList.AddEdge(0, 4, 15);
+//kruskalAdjacencyList.AddEdge(1, 2, 10);
+//kruskalAdjacencyList.AddEdge(1, 3, 8);
+//kruskalAdjacencyList.AddEdge(2, 3, 6);
+//kruskalAdjacencyList.AddEdge(2, 4, 20);
+//kruskalAdjacencyList.MST();
 
-int inf = int.MaxValue;
-int[,] graph = {
-            {0, 5, inf, 10},
-            {inf, 0, 3, inf},
-            {inf, inf, 0, 1},
-            {inf, inf, inf, 0}
-        };
+//int inf = int.MaxValue;
+//int[,] graph = {
+//            {0, 5, inf, 10},
+//            {inf, 0, 3, inf},
+//            {inf, inf, 0, 1},
+//            {inf, inf, inf, 0}
+//        };
 
-FloydWarshallAdjacencyMatrix floydWarshallAdjacencyMatrix = new FloydWarshallAdjacencyMatrix();
-floydWarshallAdjacencyMatrix.ShortestPath(graph, 4);
+//FloydWarshallAdjacencyMatrix floydWarshallAdjacencyMatrix = new FloydWarshallAdjacencyMatrix();
+//floydWarshallAdjacencyMatrix.ShortestPath(graph, 4);
 
 //BellmanFordAdjacencyMatrix bellmanFordAM = new BellmanFordAdjacencyMatrix(5);
 //bellmanFordAM.AddEdge(0, 1, -1);
