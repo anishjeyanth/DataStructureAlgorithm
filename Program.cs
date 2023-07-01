@@ -20,48 +20,45 @@ using System.Text.Json.Serialization;
 //        6
 //
 
-//KruskalAdjacencyList  kruskalAdjacencyList = new KruskalAdjacencyList(5);
+PrimsAdjacencyMatrix primsAdjacencyMatrix = new PrimsAdjacencyMatrix(5);
+primsAdjacencyMatrix.AddEdge(0, 1, 5);
+primsAdjacencyMatrix.AddEdge(0, 2, 13);
+primsAdjacencyMatrix.AddEdge(0, 4, 15);
+primsAdjacencyMatrix.AddEdge(1, 2, 10);
+primsAdjacencyMatrix.AddEdge(1, 3, 8);
+primsAdjacencyMatrix.AddEdge(2, 3, 6);
+primsAdjacencyMatrix.AddEdge(2, 4, 20);
+primsAdjacencyMatrix.MST();
+
+//PrimsAdjacencyList primsAdjacencyList = new PrimsAdjacencyList(5);
+//primsAdjacencyList.AddEdge(0, 1, 5);
+//primsAdjacencyList.AddEdge(0, 2, 13);
+//primsAdjacencyList.AddEdge(0, 4, 15);
+//primsAdjacencyList.AddEdge(1, 2, 10);
+//primsAdjacencyList.AddEdge(1, 3, 8);
+//primsAdjacencyList.AddEdge(2, 3, 6);
+//primsAdjacencyList.AddEdge(2, 4, 20);
+//primsAdjacencyList.MST();
+
+//KruskalAdjacencyMatrix kruskalAdjacencyMatrix = new KruskalAdjacencyMatrix(5);
+//kruskalAdjacencyMatrix.AddEdge(0, 1, 5);
+//kruskalAdjacencyMatrix.AddEdge(0, 2, 13);
+//kruskalAdjacencyMatrix.AddEdge(0, 4, 15);
+//kruskalAdjacencyMatrix.AddEdge(1, 2, 10);
+//kruskalAdjacencyMatrix.AddEdge(1, 3, 8);
+//kruskalAdjacencyMatrix.AddEdge(2, 3, 6);
+//kruskalAdjacencyMatrix.AddEdge(2, 4, 20);
+//kruskalAdjacencyMatrix.MST();
+
+//KruskalAdjacencyList kruskalAdjacencyList = new KruskalAdjacencyList(5);
 //kruskalAdjacencyList.AddEdge(0, 1, 5);
-//kruskalAdjacencyList.AddEdge(0, 2, 13); 
+//kruskalAdjacencyList.AddEdge(0, 2, 13);
 //kruskalAdjacencyList.AddEdge(0, 4, 15);
 //kruskalAdjacencyList.AddEdge(1, 2, 10);
 //kruskalAdjacencyList.AddEdge(1, 3, 8);
 //kruskalAdjacencyList.AddEdge(2, 3, 6);
 //kruskalAdjacencyList.AddEdge(2, 4, 20);
 //kruskalAdjacencyList.MST();
-
-//int inf = int.MaxValue;
-//int[,] graph = {
-//            {0, 5, inf, 10},
-//            {inf, 0, 3, inf},
-//            {inf, inf, 0, 1},
-//            {inf, inf, inf, 0}
-//        };
-
-//FloydWarshallAdjacencyMatrix floydWarshallAdjacencyMatrix = new FloydWarshallAdjacencyMatrix();
-//floydWarshallAdjacencyMatrix.ShortestPath(graph, 4);
-
-//BellmanFordAdjacencyMatrix bellmanFordAM = new BellmanFordAdjacencyMatrix(5);
-//bellmanFordAM.AddEdge(0, 1, -1);
-//bellmanFordAM.AddEdge(0, 2, 4);
-//bellmanFordAM.AddEdge(1, 2, 3);
-//bellmanFordAM.AddEdge(1, 3, 2);
-//bellmanFordAM.AddEdge(1, 4, 2);
-//bellmanFordAM.AddEdge(3, 2, 5);
-//bellmanFordAM.AddEdge(3, 1, 1);
-//bellmanFordAM.AddEdge(4, 3, -3);
-//bellmanFordAM.FindShortestPath(0);
-
-//BellmanFordAdjacencyList bellmanFordAL = new BellmanFordAdjacencyList(5, 8);
-//bellmanFordAL.AddEdge(0, 1, -1, 0);
-//bellmanFordAL.AddEdge(0, 2, 4, 1);
-//bellmanFordAL.AddEdge(1, 2, 3, 2);
-//bellmanFordAL.AddEdge(1, 3, 2, 3);
-//bellmanFordAL.AddEdge(1, 4, 2, 4);
-//bellmanFordAL.AddEdge(3, 2, 5, 5);
-//bellmanFordAL.AddEdge(3, 1, 1, 6);
-//bellmanFordAL.AddEdge(4, 3, -3, 7);
-//bellmanFordAL.FindShortestPath(3);
 
 //HouseRobber houseRobber = new HouseRobber();
 //Console.WriteLine(houseRobber.MaxMoneyTopDown(new int[] { 6, 7, 1, 30, 8, 2, 4 }));
@@ -134,6 +131,40 @@ using System.Text.Json.Serialization;
 //// 0,1,2,3,4,5,6,7
 //// A,B,C,D,E,F,G,H
 ////
+///
+
+//int i = int.MaxValue;
+//int[,] graph = {
+//            {0, 5, i, 10},
+//            {i, 0, 3, i},
+//            {i, i, 0, 1},
+//            {i, i, i, 0}
+//        };
+
+//FloydWarshallAdjacencyMatrix floydWarshallAdjacencyMatrix = new FloydWarshallAdjacencyMatrix();
+//floydWarshallAdjacencyMatrix.ShortestPath(graph, 4);
+
+//BellmanFordAdjacencyMatrix bellmanFordAM = new BellmanFordAdjacencyMatrix(5);
+//bellmanFordAM.AddEdge(0, 1, -1);
+//bellmanFordAM.AddEdge(0, 2, 4);
+//bellmanFordAM.AddEdge(1, 2, 3);
+//bellmanFordAM.AddEdge(1, 3, 2);
+//bellmanFordAM.AddEdge(1, 4, 2);
+//bellmanFordAM.AddEdge(3, 2, 5);
+//bellmanFordAM.AddEdge(3, 1, 1);
+//bellmanFordAM.AddEdge(4, 3, -3);
+//bellmanFordAM.FindShortestPath(0);
+
+//BellmanFordAdjacencyList bellmanFordAL = new BellmanFordAdjacencyList(5, 8);
+//bellmanFordAL.AddEdge(0, 1, -1, 0);
+//bellmanFordAL.AddEdge(0, 2, 4, 1);
+//bellmanFordAL.AddEdge(1, 2, 3, 2);
+//bellmanFordAL.AddEdge(1, 3, 2, 3);
+//bellmanFordAL.AddEdge(1, 4, 2, 4);
+//bellmanFordAL.AddEdge(3, 2, 5, 5);
+//bellmanFordAL.AddEdge(3, 1, 1, 6);
+//bellmanFordAL.AddEdge(4, 3, -3, 7);
+//bellmanFordAL.FindShortestPath(3);
 
 //DSA.ShortestPath.DijkstraAdjacencyMatrix dijkstra = new DijkstraAdjacencyMatrix();
 //int[,] arrMat = {

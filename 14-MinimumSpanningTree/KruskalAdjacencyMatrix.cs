@@ -24,19 +24,19 @@ namespace DSA.MinimumSpanningTree
             AdjacencyMatrix[desination, source] = weight;
         }
 
-        private int Find(int[] parent, int vertex)
+        private int Find(int[] visited, int vertex)
         {
-            if (parent[vertex] == -1)
+            if (visited[vertex] == -1)
                 return vertex;
 
-            return Find(parent, parent[vertex]);
+            return Find(visited, visited[vertex]);
         }
 
-        private void Union(int[] parent, int x, int y)
+        private void Union(int[] visited, int source, int destination)
         {
-            int xx = Find(parent, x);
-            int yy = Find(parent, y);
-            parent[xx] = yy;
+            int sou = Find(visited, source);
+            int des = Find(visited, destination);
+            visited[sou] = des;
         }
 
         public void MST()
@@ -44,7 +44,7 @@ namespace DSA.MinimumSpanningTree
             Edge[] edges = new Edge[Vertices * Vertices];
             int edgeCount = 0;
 
-            for(int i=0; i < Vertices; i++)
+            for(int i = 0; i < Vertices; i++)
             {
                 for(int j = i + 1; j < Vertices; j++)
                 {
@@ -62,34 +62,34 @@ namespace DSA.MinimumSpanningTree
                 }
             }
 
-            System.Array.Sort(edges , (e1,e2) => e1.Weight.CompareTo(e2.Weight));
+            Edge[] edge = edges.Where(x => x != null).ToArray<Edge>();
+            System.Array.Sort(edge, (e1,e2) => e1.Weight.CompareTo(e2.Weight));
 
             Edge[] result = new Edge[Vertices - 1];
-            int[] parent = new int[Vertices];
+            int[] visited = new int[Vertices];
 
             for (int i = 0; i < Vertices; i++)
-                parent[i] = -1;
+                visited[i] = -1;
 
             int count = 0;
             int index = 0;
             while(count < Vertices - 1)
             {
-                Edge nextEdge = edges[index++];
-                int x = Find(parent, nextEdge.Source);
-                int y = Find(parent, nextEdge.Destination);
+                Edge nextEdge = edge[index++];
+                int sou = Find(visited, nextEdge.Source);
+                int des = Find(visited, nextEdge.Destination);
 
-                if (x != y)
+                if (sou != des)
                 {
                     result[count] = nextEdge;
-                    Union(parent, x, y);
+                    Union(visited, sou, des);
                     count++;
                 }
             }
 
-
-            foreach(Edge edge in result)
+            foreach(Edge edg in result)
             {
-                Console.WriteLine(" Source " + edge.Source + " Destination " + edge.Destination + " Weight " + edge.Weight);
+                Console.WriteLine(" Source -" + edg.Source + " Destination -" + edg.Destination + " Weight -" + edg.Weight);
             }
         }
     }

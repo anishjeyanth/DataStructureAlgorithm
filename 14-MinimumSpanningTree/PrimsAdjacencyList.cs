@@ -24,23 +24,24 @@ namespace DSA.MinimumSpanningTree
 
         public void AddEdge(int source, int destination, int weight)
         {
-            AdjacencyList[source].Add(new Edge { Source = source, Destination = destination, Weight = weight });
-            AdjacencyList[destination].Add(new Edge { Source = source, Destination = destination, Weight = weight });
+            AdjacencyList[source].Add(new Edge { Destination = destination, Weight = weight });
+            AdjacencyList[destination].Add(new Edge { Source = source, Weight = weight });
         }
 
         public void MST()
         {
-            bool[] visited = new bool[Vertices];
-            int[] parent = new int[Vertices];
-            int[] key = new int[Vertices];
+            bool[] visited = new bool[Vertices]; // Array to track vertices included in MST
+            int[] parent = new int[Vertices]; // Array to store the parent of each vertex
+            int[] key = new int[Vertices]; // Array to store the minimum weight edge for each vertex
 
-            for(int i=0;i < Vertices; i++)
+            for (int i=0;i < Vertices; i++)
             {
                 key[i] = int.MaxValue;
                 visited[i] = false;
             }
 
             key[0] = 0;
+            parent[0] = -1;
 
             for(int count = 0; count < Vertices - 1; count++)
             {
@@ -83,7 +84,7 @@ namespace DSA.MinimumSpanningTree
         {
             for (int i = 0; i < Vertices; i++)
             {
-                Console.WriteLine($"{parent[i]} -- {i}   Weight: {key[i]}");
+                Console.WriteLine($"Source - {parent[i]} Destination - {i}  Weight - {key[i]}");
             }
         }
     }
