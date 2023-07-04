@@ -40,15 +40,15 @@ namespace DSA.MinimumSpanningTree
 
             for(int count = 0; count < Vertices - 1; count++)
             {
-                int u = MinKey(key, visited);
-                visited[u] = true;
+                int sou = MinKey(key, visited);
+                visited[sou] = true;
 
-                for (int v = 0; v < Vertices; v++)
+                for (int col = 0; col < Vertices; col++)
                 {
-                    if (!visited[v] && AdjacencyMatrix[u, v] != 0 && AdjacencyMatrix[u, v] < key[v])
+                    if (!visited[col] && AdjacencyMatrix[sou, col] != 0 && AdjacencyMatrix[sou, col] < key[col])
                     {
-                        parent[v] = u;
-                        key[v] = AdjacencyMatrix[u,v];
+                        parent[col] = sou;
+                        key[col] = AdjacencyMatrix[sou, col];
                     }
                 }
             }

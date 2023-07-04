@@ -22,16 +22,16 @@ namespace DSA.ShortestPath
                 }
             }
 
-            for(int k=0; k< Vertices; k++)
+            for(int v=0; v< Vertices; v++)
             {
-                for (int i = 0; i < Vertices; i++)
+                for (int row = 0; row < Vertices; row++)
                 {
-                    for (int j = 0; j < Vertices; j++)
+                    for (int col = 0; col < Vertices; col++)
                     {
-                        if (distance[i, k] != inf && distance[k, j] != inf &&
-                            distance[i, k] + distance[k, j] < distance[i, j])
+                        if (distance[row, v] != inf && distance[v, col] != inf &&
+                            distance[row, v] + distance[v, col] < distance[row, col])
                         {
-                            distance[i, j] = distance[i, k] + distance[k, j];
+                            distance[row, col] = distance[row, v] + distance[v, col];
                         }
                     }
                 }    

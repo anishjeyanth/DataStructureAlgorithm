@@ -45,18 +45,18 @@ namespace DSA.MinimumSpanningTree
 
             for(int count = 0; count < Vertices - 1; count++)
             {
-                int u = MinKey(key, visited);
-                visited[u] = true;
+                int sou = MinKey(key, visited);
+                visited[sou] = true;
 
-                foreach(Edge edge in AdjacencyList[u])
+                foreach(Edge edge in AdjacencyList[sou])
                 {
-                    int v = edge.Destination;
+                    int des = edge.Destination;
                     int weight = edge.Weight;
 
-                    if (!visited[v] && weight < key[v])
+                    if (!visited[des] && weight < key[des])
                     {
-                        parent[v] = u;
-                        key[v] = weight;
+                        parent[des] = sou;
+                        key[des] = weight;
                     }
                 }
             }

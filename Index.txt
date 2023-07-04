@@ -384,3 +384,25 @@ three critical metrics to measure the performance of a data structure: write amp
 B-tree has less read amplification than an LSM-tree while an LSM-tree has less write amplification than a B-tree.
 --
 Graph = (Vertices, Edges)
+--
+Kruskal's and Prim's algorithms guarantee the construction of a minimum spanning tree. However, they differ in their approaches. Kruskal's algorithm is based on sorting the edges by weight, while Prim's algorithm grows the minimum spanning tree iteratively from a starting vertex.
+--
+
+Tail recursion will print value in 3,2,1
+void fun(int n) {
+	if(n == 0)
+		return;
+	else 
+		print(n);
+		
+	return fun(n-1);
+}
+
+Non Tail recursion will print value in 1,2,3
+void fun(int n) {
+	if(n == 0)
+		return;
+		
+	fun(n-1);		
+	print(n);
+}

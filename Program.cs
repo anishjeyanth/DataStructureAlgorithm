@@ -14,27 +14,27 @@ using System.Text.Json.Serialization;
 //        5
 //     0 --- 1
 // 15/ |   / |
-//  4  |13/10|8
+//  4  |13/1 |8
 // 20\ | /   |
 //     2 --- 3
 //        6
 //
 
-PrimsAdjacencyMatrix primsAdjacencyMatrix = new PrimsAdjacencyMatrix(5);
-primsAdjacencyMatrix.AddEdge(0, 1, 5);
-primsAdjacencyMatrix.AddEdge(0, 2, 13);
-primsAdjacencyMatrix.AddEdge(0, 4, 15);
-primsAdjacencyMatrix.AddEdge(1, 2, 10);
-primsAdjacencyMatrix.AddEdge(1, 3, 8);
-primsAdjacencyMatrix.AddEdge(2, 3, 6);
-primsAdjacencyMatrix.AddEdge(2, 4, 20);
-primsAdjacencyMatrix.MST();
+//PrimsAdjacencyMatrix primsAdjacencyMatrix = new PrimsAdjacencyMatrix(5);
+//primsAdjacencyMatrix.AddEdge(0, 1, 5);
+//primsAdjacencyMatrix.AddEdge(0, 2, 13);
+//primsAdjacencyMatrix.AddEdge(0, 4, 15);
+//primsAdjacencyMatrix.AddEdge(1, 2, 1);
+//primsAdjacencyMatrix.AddEdge(1, 3, 8);
+//primsAdjacencyMatrix.AddEdge(2, 3, 6);
+//primsAdjacencyMatrix.AddEdge(2, 4, 20);
+//primsAdjacencyMatrix.MST();
 
 //PrimsAdjacencyList primsAdjacencyList = new PrimsAdjacencyList(5);
 //primsAdjacencyList.AddEdge(0, 1, 5);
 //primsAdjacencyList.AddEdge(0, 2, 13);
 //primsAdjacencyList.AddEdge(0, 4, 15);
-//primsAdjacencyList.AddEdge(1, 2, 10);
+//primsAdjacencyList.AddEdge(1, 2, 1);
 //primsAdjacencyList.AddEdge(1, 3, 8);
 //primsAdjacencyList.AddEdge(2, 3, 6);
 //primsAdjacencyList.AddEdge(2, 4, 20);
@@ -44,7 +44,7 @@ primsAdjacencyMatrix.MST();
 //kruskalAdjacencyMatrix.AddEdge(0, 1, 5);
 //kruskalAdjacencyMatrix.AddEdge(0, 2, 13);
 //kruskalAdjacencyMatrix.AddEdge(0, 4, 15);
-//kruskalAdjacencyMatrix.AddEdge(1, 2, 10);
+//kruskalAdjacencyMatrix.AddEdge(1, 2, 1);
 //kruskalAdjacencyMatrix.AddEdge(1, 3, 8);
 //kruskalAdjacencyMatrix.AddEdge(2, 3, 6);
 //kruskalAdjacencyMatrix.AddEdge(2, 4, 20);
@@ -54,7 +54,7 @@ primsAdjacencyMatrix.MST();
 //kruskalAdjacencyList.AddEdge(0, 1, 5);
 //kruskalAdjacencyList.AddEdge(0, 2, 13);
 //kruskalAdjacencyList.AddEdge(0, 4, 15);
-//kruskalAdjacencyList.AddEdge(1, 2, 10);
+//kruskalAdjacencyList.AddEdge(1, 2, 1);
 //kruskalAdjacencyList.AddEdge(1, 3, 8);
 //kruskalAdjacencyList.AddEdge(2, 3, 6);
 //kruskalAdjacencyList.AddEdge(2, 4, 20);
@@ -133,16 +133,16 @@ primsAdjacencyMatrix.MST();
 ////
 ///
 
-//int i = int.MaxValue;
-//int[,] graph = {
-//            {0, 5, i, 10},
-//            {i, 0, 3, i},
-//            {i, i, 0, 1},
-//            {i, i, i, 0}
-//        };
+int i = int.MaxValue;
+int[,] graph = {
+            {0, 5, i, 10},
+            {i, 0, 3, i},
+            {i, i, 0, 1},
+            {i, i, i, 0}
+        };
 
-//FloydWarshallAdjacencyMatrix floydWarshallAdjacencyMatrix = new FloydWarshallAdjacencyMatrix();
-//floydWarshallAdjacencyMatrix.ShortestPath(graph, 4);
+FloydWarshallAdjacencyMatrix floydWarshallAdjacencyMatrix = new FloydWarshallAdjacencyMatrix();
+floydWarshallAdjacencyMatrix.ShortestPath(graph, 4);
 
 //BellmanFordAdjacencyMatrix bellmanFordAM = new BellmanFordAdjacencyMatrix(5);
 //bellmanFordAM.AddEdge(0, 1, -1);
